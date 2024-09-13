@@ -70,7 +70,6 @@ const Accomplishments = () => {
         variant="h4"
         sx={{
           color: "#FFFFFF",
-          marginBottom: "20px",
           fontWeight: "bold",
           textAlign: "top",
           marginBottom: "100px"
