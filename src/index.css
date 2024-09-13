@@ -1,0 +1,10 @@
+/* index.css or global styles */
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit; /* Ensure consistent box model */
+}
