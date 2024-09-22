@@ -14,10 +14,10 @@ import {
   EvStation,
   Agriculture,
 } from "@mui/icons-material";
-import solarSolutionsImg from "../assets/heroBanner.webp";
-import netMeteringImg from "../assets/heroBanner.webp";
-import solarFinancingImg from "../assets/heroBanner.webp";
-import agricultureImg from "../assets/heroBanner.webp";
+import solarSolutionsImg from "../assets/residential.jpg";
+import netMeteringImg from "../assets/solar1.jpg";
+import solarFinancingImg from "../assets/solar2.jpg";
+import agricultureImg from "../assets/solar4.jpg";
 import bgImage from "../assets/heroBanner.webp";
 
 // Array of services data
@@ -56,7 +56,7 @@ const Services = () => {
   return (
     <Box
       sx={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('${bgImage}')`, // Image with opacity
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${bgImage}')`, // Image with opacity
         backgroundSize: "cover", // Make sure the image covers the whole area
         backgroundPosition: "center", // Center the image
         backgroundRepeat: "no-repeat", // Prevent repetition

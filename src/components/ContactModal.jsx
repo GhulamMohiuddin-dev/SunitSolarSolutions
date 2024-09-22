@@ -23,7 +23,7 @@ const ContactModal = () => {
     // Open the modal every 30 seconds
     const intervalId = setInterval(() => {
       setOpen(true);
-    }, 60000); // 30 seconds
+    }, 600000); // 30 seconds
 
     return () => clearInterval(intervalId); // Cleanup interval on component unmount
   }, []);

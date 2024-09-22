@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Button, Typography } from "@mui/material";
-import heroBanner from "../assets/heroBanner.webp";
 import { Link } from "react-router-dom";
+import video from "../assets/Solar_Panels.mp4";
 
 const heroData = {
   title: "Sunit Solars – Conserve Energy to Preserve Future",
@@ -15,22 +15,45 @@ const HeroSection = ({ data }) => {
     <Box
       sx={{
         position: "relative",
-        minHeight: "100vh", // Full-screen height
-        backgroundAttachment: "fixed", // Fixed background
-        backgroundImage: `url(${heroBanner})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        width: "100%",
-        margin: 0,
-        padding: 0,
-        display: "flex",
+        height: "100vh", // Full-screen height
+        width: "100%", // Full-screen width
+        // padding: 0,
+        marginTop: "-25px",
+        display: "flex",  
         alignItems: "center",
         justifyContent: "center",
         color: "white",
         textAlign: "center",
+        overflow: "hidden", // Ensures no scrollbars appear
         zIndex: 1,
       }}
     >
+      {/* Background Video */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        onTimeUpdate={(e) => {
+          if (e.target.currentTime >= 60) {
+            e.target.currentTime = 0; // Reset to the beginning
+          }
+        }}
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          objectFit: "cover", // Ensures the video covers the entire area
+          zIndex: 0,
+        }}
+      >
+        <source src={video} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      {/* Overlay */}
       <Box
         sx={{
           position: "absolute",
@@ -38,11 +61,12 @@ const HeroSection = ({ data }) => {
           left: 0,
           right: 0,
           bottom: 0,
-          backgroundColor: "rgba(0, 0, 0, 0.4)",
+          backgroundColor: "rgba(0, 0, 0, 0.6)",
           zIndex: 1,
         }}
       />
 
+      {/* Content */}
       <Box
         sx={{
           zIndex: 2,

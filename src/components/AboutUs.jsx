@@ -54,7 +54,7 @@ const AboutUs = () => {
           textAlign: "center",
         }}
       >
-        <Typography
+        {/* <Typography
           variant="h4"
           sx={{ color: "#333", fontWeight: "bold", mb: 4, mt: 4 }}
           id="team"
@@ -116,12 +116,13 @@ const AboutUs = () => {
               </Card>
             </Grid>
           ))}
-        </Grid>
+        </Grid> */}
 
         {/* Why Choose Us Section */}
         <Typography
           variant="h4"
-          sx={{ color: "#333", fontWeight: "bold", mt: 8, mb: 4 }}
+          id="team"
+          sx={{ color: "#333", fontWeight: "bold", mt: 4, mb: 4 }}
         >
           Why Choose Us?
         </Typography>
@@ -180,15 +181,15 @@ const AboutUs = () => {
                     Our Vision
                   </Typography>
                   <Typography sx={{ color: "#777", fontSize: "1rem" }}>
-                    Our vision is to create a world powered by solar energy,
-                    where sustainability is the norm and clean, reliable power
-                    is accessible to all. We are dedicated to being the leading
-                    provider of innovative solar solutions, delivering
-                    exceptional value to our customers. Through our unwavering
-                    commitment to technological advancements and customer
-                    satisfaction, we strive to drive the global adoption of
-                    solar energy and pave the way for a brighter and more
-                    sustainable future.
+                    Our vision is to create a world powered by affordable and
+                    customizable solar energy solutions, where sustainability
+                    becomes the standard and clean, reliable power is accessible
+                    to everyone. We are committed to being the leading provider
+                    of innovative, cost-effective solar technologies, delivering
+                    exceptional value tailored to each customer's unique needs.
+                    Through our dedication to technological advancements and
+                    personalized service, we strive to make solar energy the
+                    preferred choice for a brighter, more sustainable future.
                   </Typography>
                 </CardContent>
               </Card>
@@ -219,10 +220,12 @@ const AboutUs = () => {
                     Our Mission
                   </Typography>
                   <Typography sx={{ color: "#777", fontSize: "1rem" }}>
-                    Our mission is to accelerate the adoption of solar energy as
-                    a clean and sustainable power source. We aim to make solar
-                    energy accessible, affordable, and reliable for all,
-                    contributing to a greener and more sustainable future.
+                    Our mission is to accelerate the adoption of solar energy by
+                    offering affordable, customizable solutions that meet the
+                    diverse needs of our customers. We aim to make solar energy
+                    not only accessible but also flexible and reliable for all,
+                    ensuring a greener, more sustainable future while delivering
+                    tailored services that maximize both efficiency and savings
                   </Typography>
                 </CardContent>
               </Card>

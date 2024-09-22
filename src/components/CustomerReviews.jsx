@@ -15,46 +15,39 @@ import heroBanner from "../assets/heroBanner.webp";
 
 const reviews = [
   {
-    name: "John Doe",
-    avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+    name: "Khurram Sultan",
+    avatar: "",
     rating: 5,
     review:
-      "Outstanding service and quality! The team was very professional and the process was seamless.",
+      "Have worked with this firm for my 2 projects and i am very satisfied with their work and quality.Also the process is seamless and was completed within their quoted timeline👍.Will recommend it 100%",
   },
   {
-    name: "Jane Smith",
-    avatar: "https://randomuser.me/api/portraits/women/44.jpg",
+    name: "Mushfiq Ahmed",
+    avatar: "",
     rating: 4,
     review:
-      "Great experience overall. I’m very satisfied with the installation and customer support.",
+      "Fully satisfied with the quality of work. Project was done within the given timeline and the whole team is very professional. Highly recommended.",
   },
   {
-    name: "Alice Johnson",
-    avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+    name: "Abuzar Sajjad",
+    avatar: "",
     rating: 4.5,
     review:
-      "Professional and reliable service. The team ensured everything was done to my satisfaction.",
+      "Excellent customer service, affordable prices, and quality work. definitely an all in one solution. Highly recommended",
   },
   {
-    name: "Michael Brown",
-    avatar: "https://randomuser.me/api/portraits/men/46.jpg",
+    name: "Hamza Hasan",
+    avatar: "",
     rating: 5,
     review:
-      "Excellent communication and top-notch work quality. Highly recommend their services!",
+      "Great overall experience, high quality work done. Trained staff and highly recommended. 👌",
   },
   {
-    name: "Emma Wilson",
-    avatar: "https://randomuser.me/api/portraits/women/65.jpg",
+    name: "Humble Ahmed",
+    avatar: "",
     rating: 4,
     review:
-      "Friendly and efficient team. The project was completed on time and exceeded expectations.",
-  },
-  {
-    name: "David Lee",
-    avatar: "https://randomuser.me/api/portraits/men/53.jpg",
-    rating: 4.5,
-    review:
-      "I’m impressed with their attention to detail and commitment to delivering great results.",
+      "The best company for installation of solar system in lahore. Totally worth your money.",
   },
 ];
 
@@ -173,7 +166,8 @@ const CustomerReviews = () => {
       <Typography
         sx={{ marginBottom: "50px", color: "#FFFFFF", fontSize: "1.1rem" }}
       >
-        At Sunit Solars, we make a very simple promise. We do solar and we do it right.
+        At Sunit Solars, we make a very simple promise. We do solar and we do it
+        right.
       </Typography>
 
       <Box
@@ -194,11 +188,14 @@ const CustomerReviews = () => {
                   "&:hover": {
                     transform: "translateY(-10px)",
                     boxShadow:
-                      "0 10px 20px rgba(255, 255, 255, 0.5), 0 10px 20px rgba(0, 0, 0, 0.1)", // Add white shadow
+                      "0 10px 20px rgba(255, 255, 255, 0.5), 0 10px 20px rgba(0, 0, 0, 0.1)",
                   },
                   boxShadow:
                     "0 4px 12px rgba(255, 255, 255, 0.4), 0 4px 12px rgba(0, 0, 0, 0.05)",
                   backgroundColor: "white",
+                  height: "330px", // Set a fixed height for uniformity
+                  display: "flex",
+                  flexDirection: "column",
                 }}
               >
                 <CardContent
@@ -206,6 +203,7 @@ const CustomerReviews = () => {
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "center",
+                    padding: "20px",
                   }}
                 >
                   <Avatar
@@ -240,7 +238,19 @@ const CustomerReviews = () => {
                     }}
                     icon={<Star fontSize="inherit" />}
                   />
-                  <Typography sx={{ color: "#777", fontSize: "0.95rem" }}>
+                  <Typography
+                    sx={{
+                      color: "#777",
+                      fontSize: "0.95rem",
+                      flexGrow: 1,
+                      // maxHeight: "60px", // Limit height for the text
+                      // overflow: "hidden", // Hide overflow
+                      // textOverflow: "ellipsis", // Add ellipsis for overflow text
+                      // display: "-webkit-box", // For ellipsis
+                      // WebkitBoxOrient: "vertical",
+                      // WebkitLineClamp: 3, // Limit to 3 lines
+                    }}
+                  >
                     {review.review}
                   </Typography>
                 </CardContent>

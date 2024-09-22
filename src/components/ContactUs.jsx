@@ -9,14 +9,16 @@ import {
   CardContent,
 } from "@mui/material";
 import { styled } from "@mui/system";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';  // Import CSS for Toastify
 
 const FormContainer = styled(Box)(({ theme, isTrue }) => ({
-    padding: isTrue ? "60px 20px" : "0px", // Conditional padding based on isTrue
-    backgroundColor: "#f8f9fa",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-  }));
+  padding: isTrue ? "60px 20px" : "0px", // Conditional padding based on isTrue
+  backgroundColor: "#f8f9fa",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+}));
 
 const StyledCard = styled(Card)(({ theme }) => ({
   maxWidth: "600px",
@@ -43,7 +45,7 @@ const StyledButton = styled(Button)(({ theme }) => ({
   },
 }));
 
-const ContactUs = ({isTrue}) => {
+const ContactUs = ({ isTrue }) => {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -63,7 +65,7 @@ const ContactUs = ({isTrue}) => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
-    setErrors({ ...errors, [name]: "" }); // Reset the error message on change
+    setErrors({ ...errors, [name]: "" });
   };
 
   const validateForm = () => {
@@ -86,31 +88,30 @@ const ContactUs = ({isTrue}) => {
     if (!formData.phone.trim()) {
       newErrors.phone = "Phone number is required";
     } else if (!/^\d{11}$/.test(formData.phone)) {
-      newErrors.phone = "Phone number should be 10 digits";
+      newErrors.phone = "Phone number should be 11 digits";
     }
 
     setErrors(newErrors);
-    return Object.keys(newErrors).length === 0; // Return true if no errors
+    return Object.keys(newErrors).length === 0;
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     if (!validateForm()) {
+      toast.error("Please fill out the form correctly.");
       return;
     }
 
-    // Replace with your Google Form's action URL
     const googleFormUrl =
       "https://docs.google.com/forms/d/e/1FAIpQLSdbipYbiZxE77OcgImyWWxfUCHCktw_2LxQ7POEM4n9B5kVbw/formResponse";
 
-    // Replace with your form's input field names
     const formBody = new URLSearchParams();
-    formBody.append("entry.496938758", formData.firstName); // Replace entry.1234567890 with your field's entry ID
-    formBody.append("entry.1848396228", formData.lastName); // Replace entry.2345678901 with your field's entry ID
-    formBody.append("entry.1934411141", formData.city); // Replace entry.3456789012 with your field's entry ID
-    formBody.append("entry.1287449100", formData.email); // Replace entry.4567890123 with your field's entry ID
-    formBody.append("entry.484797899", formData.phone); // Replace entry.5678901234 with your field's entry ID
+    formBody.append("entry.496938758", formData.firstName);
+    formBody.append("entry.1848396228", formData.lastName);
+    formBody.append("entry.1934411141", formData.city);
+    formBody.append("entry.1287449100", formData.email);
+    formBody.append("entry.484797899", formData.phone);
 
     fetch(googleFormUrl, {
       method: "POST",
@@ -121,7 +122,7 @@ const ContactUs = ({isTrue}) => {
       body: formBody.toString(),
     })
       .then(() => {
-        alert("Your response has been submitted successfully!");
+        toast.success("Your response has been submitted successfully!");
         setFormData({
           firstName: "",
           lastName: "",
@@ -132,7 +133,7 @@ const ContactUs = ({isTrue}) => {
       })
       .catch((error) => {
         console.error("Error submitting form:", error);
-        alert("There was an error submitting your response. Please try again.");
+        toast.error("There was an error submitting your response.");
       });
   };
 
@@ -150,10 +151,12 @@ const ContactUs = ({isTrue}) => {
                 textAlign: "center",
               }}
             >
-              {isTrue ? "Contact Us" : "Not Satisfied Yet?"}
+              {isTrue ? "Contact Us" : "Want Zero Bills?"}
             </Typography>
             <Typography sx={{ color: "#777", mb: 4, textAlign: "center" }}>
-            {isTrue ? "Kindly Fill This Form. One Of Our Representatives Will Contact You." : "Save Utility Bills with us. Get in touch!"}
+              {isTrue
+                ? "Kindly Fill This Form. One Of Our Representatives Will Contact You."
+                : "Get in touch Now!"}
             </Typography>
             <form onSubmit={handleSubmit}>
               <Grid container spacing={2}>
@@ -257,6 +260,8 @@ const ContactUs = ({isTrue}) => {
           </CardContent>
         </StyledCard>
       </FormContainer>
+      {/* Toast Container for showing notifications */}
+      <ToastContainer position="top-right" autoClose={3000} hideProgressBar />
     </>
   );
 };

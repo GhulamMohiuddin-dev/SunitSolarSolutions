@@ -11,10 +11,11 @@ import CustomerReviews from "./components/CustomerReviews";
 import Footer from "./components/Footer";
 import AboutUs from "./components/AboutUs"; // Import the About Us page component
 import SocialMediaSidebar from "./components/SocialMediaSidebar";
-import VideoSection from "./components/VideoSection";
-import SolarFinancing from "./components/SolarFinancing";
+import VideoSection from "./components/NetMeteringSection";
 import ContactPage from "./components/ContactPage";
 import ContactModal from "./components/ContactModal";
+import SolarSolutions from "./components/SolarSolutions";
+import NetMeteringSection from "./components/NetMeteringSection";
 
 // Define the custom theme
 const theme = createTheme({
@@ -71,8 +72,8 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/contact-us" element={<ContactPage />} />
-          <Route path="/my-projects" element={<VideoSection />} />
-          <Route path="/my-financing" element={<SolarFinancing />} />
+          <Route path="/my-projects" element={<NetMeteringSection />} />
+          <Route path="/my-solutions" element={<SolarSolutions />} />
 
 
           {/* Add more routes here if needed */}
@@ -89,7 +90,7 @@ const HomePage = () => (
   <>
     <HeroSection data={heroData} />
     <Services />
-    <SolarPackages />
+    {/* <SolarPackages /> */}
     <Accomplishments />
     <Processes />
     <CustomerReviews />

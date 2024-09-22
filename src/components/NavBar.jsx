@@ -17,27 +17,29 @@ import {
   Typography,
 } from "@mui/material";
 import {
-  LinkedIn,
   Instagram,
+  WhatsApp,
+  Facebook,
+  Twitter,
+  LinkedIn,
   Phone,
   Menu,
   ArrowDropDown,
   ExpandLess,
   ExpandMore,
 } from "@mui/icons-material";
-import logo from "../assets/sunitLogo.webp";
+import logo from "../assets/SunitSolarLogo-02.png";
 import { Link } from "react-router-dom";
 
 const NavBar = () => {
   const [anchorEl, setAnchorEl] = useState(null);
   const [openMenu, setOpenMenu] = useState(null);
-  const [drawerOpen, setDrawerOpen] = useState(false); // State for drawer
+  const [drawerOpen, setDrawerOpen] = useState(false);
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState({
     aboutUs: false,
     contactUs: false,
-  }); // State for dropdowns in mobile
+  });
 
-  // Menu Open/Close Handlers for Desktop (hover)
   const handleMenuOpen = (event, menuId) => {
     setAnchorEl(event.currentTarget);
     setOpenMenu(menuId);
@@ -58,16 +60,14 @@ const NavBar = () => {
     setDrawerOpen(open);
   };
 
-  // Mobile Dropdown Toggle (onClick)
   const handleMobileDropdownToggle = (menuId) => (event) => {
-    event.stopPropagation(); // Prevent the drawer from closing when expanding/collapsing dropdown
+    event.stopPropagation();
     setMobileDropdownOpen((prevState) => ({
       ...prevState,
       [menuId]: !prevState[menuId],
     }));
   };
 
-  // Common Menu Item Styles
   const menuButtonStyle = {
     color: "white",
     display: "flex",
@@ -80,164 +80,115 @@ const NavBar = () => {
     transition: "transform 0.2s ease",
   };
 
-  // Render Menu Items for Both Desktop and Drawer
-  const renderMenuItems = (isDrawer = false) => (
-    <>
-      {/* About Us - Desktop uses Button, Drawer uses ListItem */}
-      <Box
-        onMouseEnter={
-          !isDrawer ? (event) => handleMenuOpen(event, "aboutUs") : undefined
-        }
-        onMouseLeave={!isDrawer ? handleMenuClose : undefined}
-        sx={{ display: isDrawer ? "block" : "inline-block" }}
-      >
-        {!isDrawer ? (
-          <Button
-            color="inherit"
-            component={Link}
-            to="/about-us"
-            sx={menuButtonStyle}
-          >
-            About Us{" "}
-            <ArrowDropDown sx={{ fontSize: "small", marginLeft: "4px" }} />
-          </Button>
-        ) : (
-          <>
-            <ListItem button onClick={handleMobileDropdownToggle("aboutUs")}>
-              <ListItemText primary="About Us" sx={{ color: "white" }} />
-              {mobileDropdownOpen.aboutUs ? <ExpandLess /> : <ExpandMore />}
-            </ListItem>
-            <Collapse
-              in={mobileDropdownOpen.aboutUs}
-              timeout="auto"
-              unmountOnExit
-            >
-              <List component="div" disablePadding>
-                <ListItem
-                  component={Link}
-                  to="/about-us#mission"
-                  sx={{ pl: 4 }}
-                >
-                  <ListItemText primary="Our Mission" sx={{ color: "white" }} />
-                </ListItem>
-                <ListItem component={Link} to="/about-us#team" sx={{ pl: 4 }}>
-                  <ListItemText primary="Our Team" sx={{ color: "white" }} />
-                </ListItem>
-              </List>
-            </Collapse>
-          </>
-        )}
+  const menuItems = [
+    {
+      id: "aboutUs",
+      label: "About Us",
+      link: "/about-us",
+      subItems: [
+        { label: "Our Mission", link: "/about-us#mission" },
+        { label: "Why Choose Us", link: "/about-us#team" },
+      ],
+    },
+    {
+      id: "solarSolutions",
+      label: "Solar Solutions",
+      link: "/my-solutions", // Ensure this is the correct path
+      subItems: [
+        { label: "Industrial Solutions", link: "/my-solutions#industrial" },
+        { label: "Commercial Solutions", link: "/my-solutions#commercial" },
+        { label: "Residential Solutions", link: "/my-solutions#residential" },
+      ],
+    },
+    { id: "contactUs", label: "Contact Us", link: "/contact-us" },
+    { id: "netMetering", label: "Net Metering", link: "/my-projects" },
+  ];
 
-        {!isDrawer && (
-          <Popper
-            open={openMenu === "aboutUs"}
-            anchorEl={anchorEl}
-            onClose={handleMenuClose}
-            placement="bottom-start"
-            sx={{ zIndex: 1000 }}
-          >
-            <Paper
-              onMouseLeave={handleMenuClose}
-              sx={{ backgroundColor: "#333", color: "white" }} // Dropdown styling
-            >
-              <MenuItem
-                onClick={handleMenuClose}
-                component={Link}
-                to="/about-us#mission"
-                sx={{
-                  color: "white",
-                  "&:hover": {
-                    color: "#fcb916",
-                    transform: "scale(0.95)",
-                  },
-                }}
-              >
-                Our Mission
-              </MenuItem>
-              <MenuItem
-                onClick={handleMenuClose}
-                component={Link}
-                to="/about-us#team"
-                sx={{
-                  color: "white",
-                  "&:hover": {
-                    color: "#fcb916",
-                    transform: "scale(0.95)",
-                  },
-                }}
-              >
-                Our Team
-              </MenuItem>
-            </Paper>
-          </Popper>
-        )}
-      </Box>
-
-      {/* Contact Us - Desktop uses Button, Drawer uses ListItem */}
-      <Box
-        onMouseEnter={
-          !isDrawer ? (event) => handleMenuOpen(event, "contactUs") : undefined
-        }
-        onMouseLeave={!isDrawer ? handleMenuClose : undefined}
-        sx={{ display: isDrawer ? "block" : "inline-block" }}
-      >
-        {!isDrawer ? (
-          <Button
-            color="inherit"
-            component={Link}
-            to="/contact-us"
-            sx={menuButtonStyle}
-          >
-            Contact Us{" "}
-          </Button>
-        ) : (
-          <>
-            <ListItem button onClick={handleMobileDropdownToggle("contactUs")}>
-              <ListItemText primary="Contact Us" sx={{ color: "white" }} />
-              {mobileDropdownOpen.contactUs ? <ExpandLess /> : <ExpandMore />}
-            </ListItem>
-            <Collapse
-              in={mobileDropdownOpen.contactUs}
-              timeout="auto"
-              unmountOnExit
-            >
-              <List component="div" disablePadding>
-                <ListItem sx={{ pl: 4 }}>
-                  <ListItemText primary="Email" sx={{ color: "white" }} />
-                </ListItem>
-                <ListItem sx={{ pl: 4 }}>
-                  <ListItemText primary="Phone" sx={{ color: "white" }} />
-                </ListItem>
-              </List>
-            </Collapse>
-          </>
-        )}
-      </Box>
-
-      {/* Simple Menu Items (No dropdown) */}
+  const renderMenuItem = (item, isDrawer) => (
+    <Box
+      key={item.id}
+      onMouseEnter={
+        !isDrawer ? (event) => handleMenuOpen(event, item.id) : undefined
+      }
+      onMouseLeave={!isDrawer ? handleMenuClose : undefined}
+      sx={{ display: isDrawer ? "block" : "inline-block" }}
+    >
       <Button
         color="inherit"
-        sx={menuButtonStyle}
         component={Link}
-        to="/my-projects"
+        to={item.link}
+        sx={menuButtonStyle}
+        onClick={
+          isDrawer && item.subItems
+            ? handleMobileDropdownToggle(item.id)
+            : undefined
+        }
       >
-        Our Story
+        {item.label}
+        {item.subItems && !isDrawer && (
+          <ArrowDropDown sx={{ fontSize: "small", marginLeft: "4px" }} />
+        )}
       </Button>
-      <Button color="inherit" sx={menuButtonStyle} component={Link}
-        to="/my-financing">
-        Solar Financing
-      </Button>
-    </>
+
+      {isDrawer && item.subItems && (
+        <Collapse in={mobileDropdownOpen[item.id]} timeout="auto" unmountOnExit>
+          <List component="div" disablePadding>
+            {item.subItems.map((subItem, index) => (
+              <ListItem
+                key={index}
+                component={Link}
+                to={subItem.link}
+                sx={{ pl: 4 }}
+              >
+                <ListItemText primary={subItem.label} sx={{ color: "white" }} />
+              </ListItem>
+            ))}
+          </List>
+        </Collapse>
+      )}
+
+      {!isDrawer && item.subItems && (
+        <Popper
+          open={openMenu === item.id}
+          anchorEl={anchorEl}
+          onClose={handleMenuClose}
+          placement="bottom-start"
+          sx={{ zIndex: 1000 }}
+        >
+          <Paper
+            onMouseLeave={handleMenuClose}
+            sx={{ backgroundColor: "#333", color: "white" }}
+          >
+            {item.subItems.map((subItem, index) => (
+              <MenuItem
+                key={index}
+                onClick={handleMenuClose}
+                component={Link}
+                to={subItem.link}
+                sx={{
+                  color: "white",
+                  "&:hover": {
+                    color: "#fcb916",
+                    transform: "scale(0.95)",
+                  },
+                }}
+              >
+                {subItem.label}
+              </MenuItem>
+            ))}
+          </Paper>
+        </Popper>
+      )}
+    </Box>
   );
 
   return (
     <>
-      {/* AppBar for Navbar */}
       <AppBar
         position="sticky"
         sx={{
           zIndex: 10,
-          backgroundColor: "#333",
+          backgroundColor: "#666",
           padding: "10px 20px",
           margin: "0px",
           width: "100%",
@@ -250,7 +201,6 @@ const NavBar = () => {
             alignItems: "center",
           }}
         >
-          {/* Logo */}
           <Box
             sx={{ display: "flex", alignItems: "center" }}
             component={Link}
@@ -259,20 +209,16 @@ const NavBar = () => {
             <img src={logo} alt="Premium Solar" style={{ height: "50px" }} />
           </Box>
 
-          {/* Hamburger Icon for Mobile */}
           <IconButton
             edge="start"
             color="inherit"
             aria-label="menu"
-            sx={{
-              display: { xs: "flex", md: "none" }, // Show only on small screens
-            }}
+            sx={{ display: { xs: "flex", md: "none" } }}
             onClick={toggleDrawer(true)}
           >
             <Menu />
           </IconButton>
 
-          {/* Drawer for mobile screens */}
           <Drawer anchor="left" open={drawerOpen} onClose={toggleDrawer(false)}>
             <Box
               sx={{
@@ -282,15 +228,11 @@ const NavBar = () => {
                 height: "100%",
               }}
               role="presentation"
-              onClick={(e) => e.stopPropagation()} // Prevent drawer from closing when expanding items
+              onClick={(e) => e.stopPropagation()}
               onKeyDown={toggleDrawer(false)}
             >
-              <List>
-                {/* Drawer Menu Items */}
-                {renderMenuItems(true)}
-              </List>
+              <List>{menuItems.map((item) => renderMenuItem(item, true))}</List>
               <Divider sx={{ borderColor: "#fcb916" }} />
-              {/* Social Media Icons in Drawer */}
               <Box sx={{ padding: "10px 0", textAlign: "center" }}>
                 <IconButton color="inherit">
                   <LinkedIn sx={{ color: "white" }} />
@@ -302,36 +244,23 @@ const NavBar = () => {
             </Box>
           </Drawer>
 
-          {/* Horizontal Menu for Desktop */}
           <Box
             sx={{
-              display: { xs: "none", md: "flex" }, // Hide on small screens
+              display: { xs: "none", md: "flex" },
               gap: "20px",
               alignItems: "center",
             }}
           >
-            {renderMenuItems()}
+            {menuItems.map((item) => renderMenuItem(item, false))}
           </Box>
 
-          {/* Right Side - Contact Button and Social Media Icons */}
           <Box
             sx={{
-              display: { xs: "none", md: "flex" }, // Hide on small screens
+              display: { xs: "none", md: "flex" },
               alignItems: "center",
               gap: "10px",
             }}
           >
-            <Phone sx={{ color: "inherit" }} />
-            <Typography
-              variant="body1"
-              sx={{
-                color: "inherit",
-                fontSize: "16px",
-                fontWeight: "bold",
-              }}
-            >
-              +1 234 567 890
-            </Typography>
             <Button
               variant="contained"
               component={Link}
@@ -342,23 +271,51 @@ const NavBar = () => {
                 fontSize: "14px",
                 fontWeight: "bold",
                 transition: "transform 0.2s ease",
-                "&:hover": {
-                  transform: "scale(1.05)",
-                },
-                ["@media (max-width:600px)"]: {
-                  fontSize: "12px", // Smaller button text for mobile
-                },
+                "&:hover": { transform: "scale(1.05)" },
+                ["@media (max-width:600px)"]: { fontSize: "12px" },
               }}
             >
               Get a Quote
             </Button>
 
-            {/* Social Media Icons */}
-            <IconButton color="inherit">
-              <LinkedIn sx={{ color: "white" }} />
+            {/* WhatsApp */}
+            <IconButton
+              color="inherit"
+              component="a"
+              href="https://wa.me/yourwhatsapplink"
+              target="_blank"
+            >
+              <WhatsApp sx={{ color: "white" }} />
             </IconButton>
-            <IconButton color="inherit">
+
+            {/* Instagram */}
+            <IconButton
+              color="inherit"
+              component="a"
+              href="https://www.instagram.com"
+              target="_blank"
+            >
               <Instagram sx={{ color: "white" }} />
+            </IconButton>
+
+            {/* Facebook */}
+            <IconButton
+              color="inherit"
+              component="a"
+              href="https://www.facebook.com"
+              target="_blank"
+            >
+              <Facebook sx={{ color: "white" }} />
+            </IconButton>
+
+            {/* Twitter */}
+            <IconButton
+              color="inherit"
+              component="a"
+              href="https://www.twitter.com"
+              target="_blank"
+            >
+              <Twitter sx={{ color: "white" }} />
             </IconButton>
           </Box>
         </Toolbar>
