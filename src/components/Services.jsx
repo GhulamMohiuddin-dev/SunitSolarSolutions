@@ -13,6 +13,8 @@ import {
   MonetizationOn,
   EvStation,
   Agriculture,
+  Business,
+  Home,
 } from "@mui/icons-material";
 import solarSolutionsImg from "../assets/residential.jpg";
 import netMeteringImg from "../assets/solar1.jpg";
@@ -23,11 +25,25 @@ import bgImage from "../assets/heroBanner.webp";
 // Array of services data
 const services = [
   {
-    title: "Solar Solutions",
-    description: "Harness the power of the sun to meet your energy needs.",
+    title: "Industrial Solar Solutions",
+    description: "Tailored solar solutions designed for industrial applications to maximize energy efficiency.",
+    icon: <Business sx={{ color: "#fcb916", fontSize: "2rem" }} />,
+    image: solarSolutionsImg, // Update with relevant industrial image
+    alt: "Industrial Solar Solutions",
+  },
+  {
+    title: "Commercial Solar Solutions",
+    description: "Comprehensive solar options for businesses to reduce energy costs and carbon footprint.",
     icon: <WbSunny sx={{ color: "#fcb916", fontSize: "2rem" }} />,
-    image: solarSolutionsImg,
-    alt: "Solar Solutions",
+    image: solarFinancingImg, // Update with relevant commercial image
+    alt: "Commercial Solar Solutions",
+  },
+  {
+    title: "Residential Solar Solutions",
+    description: "Affordable solar systems for homes to enhance sustainability and save on electricity bills.",
+    icon: <Home sx={{ color: "#fcb916", fontSize: "2rem" }} />,
+    image: agricultureImg, // Update with relevant residential image
+    alt: "Residential Solar Solutions",
   },
   {
     title: "Net Metering",
@@ -35,20 +51,6 @@ const services = [
     icon: <EvStation sx={{ color: "#fcb916", fontSize: "2rem" }} />,
     image: netMeteringImg,
     alt: "Net Metering",
-  },
-  {
-    title: "Solar Financing",
-    description: "Affordable financing options for your solar projects.",
-    icon: <MonetizationOn sx={{ color: "#fcb916", fontSize: "2rem" }} />,
-    image: solarFinancingImg,
-    alt: "Solar Financing",
-  },
-  {
-    title: "Agricultural",
-    description: "Solar solutions for efficient agricultural processes.",
-    icon: <Agriculture sx={{ color: "#fcb916", fontSize: "2rem" }} />,
-    image: agricultureImg,
-    alt: "Agricultural",
   },
 ];
 
@@ -76,8 +78,9 @@ const Services = () => {
       <Typography
         sx={{ marginBottom: "50px", color: "#FFFFFF", fontSize: "1.1rem" }}
       >
-        At AMA Energy, we specialize in providing innovative solar solutions
-        that empower Pakistan’s transition toward sustainable energy sources.
+        At Sunit Solar solutions our team of experts is specialized in providing
+        customized and affordable solar solutions that can help in reducing the
+        cost of electricity.
       </Typography>
 
       {/* Services Grid */}
