@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Button, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
-import video from "../assets/Solar_Panels.mp4";
+import video from "../assets/Solar_Panels.webm";
 
 const heroData = {
   title: "Sunit Solars – Conserve Energy to Preserve Future",

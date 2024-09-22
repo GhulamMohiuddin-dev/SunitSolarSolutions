@@ -16,10 +16,10 @@ import {
   Business,
   Home,
 } from "@mui/icons-material";
-import solarSolutionsImg from "../assets/residential.jpg";
-import netMeteringImg from "../assets/solar1.jpg";
-import solarFinancingImg from "../assets/solar2.jpg";
-import agricultureImg from "../assets/solar4.jpg";
+import solarSolutionsImg from "../assets/residential.webp";
+import netMeteringImg from "../assets/solar1.webp";
+import solarFinancingImg from "../assets/solar2.webp";
+import agricultureImg from "../assets/solar4.webp";
 import bgImage from "../assets/heroBanner.webp";
 
 // Array of services data
