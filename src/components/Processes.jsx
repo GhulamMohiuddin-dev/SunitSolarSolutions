@@ -77,7 +77,8 @@ const Processes = () => {
             justifyContent: "center",
             marginBottom: "20px",
             position: "relative",
-            gap: "50px"
+            gap: "20px", // Reduced gap for smaller screens
+            flexWrap: "wrap", // Allows wrapping on smaller screens
           }}
         >
           {processSteps.slice(0, 3).map((step, index) => {
@@ -107,7 +108,7 @@ const Processes = () => {
                 <Typography
                   sx={{
                     color: "#FFFFFF",
-                    fontSize: "1.4rem",
+                    fontSize: { xs: "1rem", md: "1.4rem" }, // Responsive font size
                     marginRight: "10px",
                   }}
                 >
@@ -129,17 +130,16 @@ const Processes = () => {
             );
           })}
         </Box>
-        <Box display="flex" marginLeft="980px">
-          <Icon
-            sx={{
-              color: "#fcb916",
-              fontSize: "2rem",
-              position: "relative",
-            }}
-          >
-            <ArrowDownward />
-          </Icon>
-        </Box>
+        <Icon
+          sx={{
+            color: "#fcb916",
+            fontSize: "2rem",
+            position: "relative",
+            margin: "20px 0", // Added margin for spacing
+          }}
+        >
+          <ArrowDownward />
+        </Icon>
 
         {/* Second Line */}
         <Box
@@ -148,7 +148,8 @@ const Processes = () => {
             justifyContent: "center",
             position: "relative",
             marginTop: "40px",
-            gap: "50px"
+            gap: "20px", // Reduced gap for smaller screens
+            flexWrap: "wrap", // Allows wrapping on smaller screens
           }}
         >
           {processSteps.slice(3).map((step, index) => {
@@ -180,7 +181,7 @@ const Processes = () => {
                 <Typography
                   sx={{
                     color: "#FFFFFF",
-                    fontSize: "1.4rem",
+                    fontSize: { xs: "1rem", md: "1.4rem" }, // Responsive font size
                     marginRight: "10px",
                   }}
                 >

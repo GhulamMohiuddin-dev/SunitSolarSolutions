@@ -54,75 +54,17 @@ const AboutUs = () => {
           textAlign: "center",
         }}
       >
-        {/* <Typography
-          variant="h4"
-          sx={{ color: "#333", fontWeight: "bold", mb: 4, mt: 4 }}
-          id="team"
-        >
-          Meet The Team
-        </Typography>
-
-        <Grid container spacing={4} justifyContent="center">
-          {teamMembers.map((member, index) => (
-            <Grid item xs={12} md={4} key={index}>
-              <Card
-                sx={{
-                  padding: "20px",
-                  boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
-                  transition: "transform 0.3s",
-                  "&:hover": {
-                    transform: "translateY(-10px)",
-                  },
-                }}
-              >
-                <CardContent
-                  sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                  }}
-                >
-                  <Avatar
-                    src={member.avatar}
-                    alt={member.name}
-                    sx={{
-                      width: 100,
-                      height: 100,
-                      marginBottom: "15px",
-                      border: "3px solid #fcb916",
-                    }}
-                  />
-                  <Typography
-                    variant="h6"
-                    sx={{ fontWeight: "bold", color: "#555", mb: 1 }}
-                  >
-                    {member.name}
-                  </Typography>
-                  <Typography
-                    sx={{ color: "#fcb916", fontSize: "0.95rem", mb: 2 }}
-                  >
-                    {member.position}
-                  </Typography>
-                  <Typography
-                    sx={{
-                      color: "#777",
-                      fontSize: "0.9rem",
-                      textAlign: "center",
-                    }}
-                  >
-                    {member.bio}
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-          ))}
-        </Grid> */}
-
         {/* Why Choose Us Section */}
         <Typography
           variant="h4"
           id="team"
-          sx={{ color: "#333", fontWeight: "bold", mt: 4, mb: 4 }}
+          sx={{
+            color: "#333",
+            fontWeight: "bold",
+            mt: 4,
+            mb: 4,
+            fontSize: { xs: "1.8rem", sm: "2.4rem" }, // Responsive font size
+          }}
         >
           Why Choose Us?
         </Typography>
@@ -134,7 +76,13 @@ const AboutUs = () => {
             margin: "auto",
           }}
         >
-          <Typography sx={{ color: "#555", fontSize: "1rem", mb: 2 }}>
+          <Typography
+            sx={{
+              color: "#555",
+              fontSize: { xs: "0.9rem", sm: "1rem" }, // Smaller font size for mobile
+              mb: 2,
+            }}
+          >
             We are the Solar Energy Specialists driven to create an affordable
             and clean energy future for commercial & industrial entities in the
             region. A one-stop solution to eliminate your ongoing energy crisis.
@@ -150,19 +98,33 @@ const AboutUs = () => {
         {/* Vision and Mission Section */}
         <Typography
           variant="h4"
-          sx={{ color: "#333", fontWeight: "bold", mt: 8, mb: 4 }}
+          sx={{
+            color: "#333",
+            fontWeight: "bold",
+            mt: 8,
+            mb: 4,
+            fontSize: { xs: "1.8rem", sm: "2.4rem" }, // Responsive font size
+          }}
           id="mission"
         >
           Our Vision & Mission
         </Typography>
 
-        <Grid container spacing={4} justifyContent="center">
+        <Grid
+          container
+          spacing={4}
+          justifyContent="center"
+          sx={{
+            paddingLeft: { xs: "10px", sm: "0" },
+            paddingRight: { xs: "10px", sm: "0" },
+          }}
+        >
           {/* Vision Card */}
           <Grid item xs={12} md={5}>
             <Grow in timeout={1000}>
               <Card
                 sx={{
-                  padding: "30px",
+                  padding: { xs: "20px", md: "30px" }, // Adjust padding for mobile
                   textAlign: "left",
                   boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
                   transition: "transform 0.3s",
@@ -177,10 +139,19 @@ const AboutUs = () => {
                     size="2x"
                     style={{ color: "#fcb916", marginBottom: "20px" }}
                   />
-                  <Typography variant="h5" sx={{ fontWeight: "bold", mb: 2 }}>
+                  <Typography
+                    variant="h5"
+                    sx={{
+                      fontWeight: "bold",
+                      mb: 2,
+                      fontSize: { xs: "1.2rem", sm: "1.5rem" }, // Responsive font size
+                    }}
+                  >
                     Our Vision
                   </Typography>
-                  <Typography sx={{ color: "#777", fontSize: "1rem" }}>
+                  <Typography
+                    sx={{ color: "#777", fontSize: { xs: "0.9rem", sm: "1rem" } }}
+                  >
                     Our vision is to create a world powered by affordable and
                     customizable solar energy solutions, where sustainability
                     becomes the standard and clean, reliable power is accessible
@@ -201,7 +172,7 @@ const AboutUs = () => {
             <Grow in timeout={1500}>
               <Card
                 sx={{
-                  padding: "30px",
+                  padding: { xs: "20px", md: "30px" }, // Adjust padding for mobile
                   textAlign: "left",
                   boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
                   transition: "transform 0.3s",
@@ -216,10 +187,19 @@ const AboutUs = () => {
                     size="2x"
                     style={{ color: "#fcb916", marginBottom: "20px" }}
                   />
-                  <Typography variant="h5" sx={{ fontWeight: "bold", mb: 2 }}>
+                  <Typography
+                    variant="h5"
+                    sx={{
+                      fontWeight: "bold",
+                      mb: 2,
+                      fontSize: { xs: "1.2rem", sm: "1.5rem" }, // Responsive font size
+                    }}
+                  >
                     Our Mission
                   </Typography>
-                  <Typography sx={{ color: "#777", fontSize: "1rem" }}>
+                  <Typography
+                    sx={{ color: "#777", fontSize: { xs: "0.9rem", sm: "1rem" } }}
+                  >
                     Our mission is to accelerate the adoption of solar energy by
                     offering affordable, customizable solutions that meet the
                     diverse needs of our customers. We aim to make solar energy
@@ -232,6 +212,7 @@ const AboutUs = () => {
             </Grow>
           </Grid>
         </Grid>
+
         <Box marginTop="30px">
           <Button
             variant="contained"
@@ -240,16 +221,12 @@ const AboutUs = () => {
             sx={{
               backgroundColor: "#fcb916",
               color: "black",
-              padding: "10px 20px",
-              fontSize: "16px",
+              padding: { xs: "8px 15px", sm: "10px 20px" }, // Adjust padding for mobile
+              fontSize: { xs: "14px", sm: "16px" }, // Smaller button text for mobile
               fontWeight: "bold",
               transition: "transform 0.2s ease",
               "&:hover": {
                 transform: "scale(1.05)",
-              },
-              ["@media (max-width:600px)"]: {
-                padding: "8px 15px", // Adjust padding for mobile
-                fontSize: "14px", // Smaller button text for mobile
               },
             }}
           >

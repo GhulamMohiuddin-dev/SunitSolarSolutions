@@ -18,6 +18,9 @@ const FormContainer = styled(Box)(({ theme, isTrue }) => ({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
+  ["@media (max-width:600px)"]: {
+    padding: "30px 10px", // Less padding for mobile screens
+  },
 }));
 
 const StyledCard = styled(Card)(({ theme }) => ({
@@ -25,6 +28,9 @@ const StyledCard = styled(Card)(({ theme }) => ({
   width: "100%",
   boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
   borderRadius: "15px",
+  ["@media (max-width:600px)"]: {
+    maxWidth: "100%", // Full width for small screens
+  },
 }));
 
 const StyledButton = styled(Button)(({ theme }) => ({
@@ -41,7 +47,7 @@ const StyledButton = styled(Button)(({ theme }) => ({
   },
   ["@media (max-width:600px)"]: {
     padding: "8px 15px",
-    fontSize: "14px",
+    fontSize: "14px", // Smaller font size for mobile
   },
 }));
 

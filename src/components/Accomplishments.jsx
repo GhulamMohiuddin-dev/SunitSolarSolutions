@@ -1,29 +1,29 @@
 import React, { useEffect, useState } from "react";
 import { Box, Grid, Typography, IconButton } from "@mui/material";
 import { WbSunny, Build, Nature, EmojiNature } from "@mui/icons-material";
-import heroBanner from "../../public/assets/heroBanner.webp"
+import heroBanner from "../../public/assets/heroBanner.webp";
 
 // Array of accomplishments data
 const accomplishments = [
   {
     title: "KW Installed PV Capacity",
     value: 5000,
-    icon: <WbSunny sx={{ color: "#fcb916", fontSize: "3rem" }} />, // Larger icon
+    icon: <WbSunny sx={{ color: "#fcb916", fontSize: { xs: "2rem", md: "3rem" } }} />, // Responsive icon size
   },
   {
     title: "Successfully Completed Projects",
     value: 120,
-    icon: <Build sx={{ color: "#fcb916", fontSize: "3rem" }} />, // Larger icon
+    icon: <Build sx={{ color: "#fcb916", fontSize: { xs: "2rem", md: "3rem" } }} />, // Responsive icon size
   },
   {
     title: "Ton/Annually Carbon Footprint Reduction",
     value: 3500,
-    icon: <Nature sx={{ color: "#fcb916", fontSize: "3rem" }} />, // Larger icon
+    icon: <Nature sx={{ color: "#fcb916", fontSize: { xs: "2rem", md: "3rem" } }} />, // Responsive icon size
   },
   {
     title: "Annually Trees Planted",
     value: 1000,
-    icon: <EmojiNature sx={{ color: "#fcb916", fontSize: "3rem" }} />, // Larger icon
+    icon: <EmojiNature sx={{ color: "#fcb916", fontSize: { xs: "2rem", md: "3rem" } }} />, // Responsive icon size
   },
 ];
 
@@ -59,7 +59,7 @@ const Accomplishments = () => {
         backgroundAttachment: 'fixed', // Fixed background
         backgroundRepeat: "no-repeat",
         minHeight: "90vh", // Full-screen height
-        padding: "60px 20px",
+        padding: { xs: "40px 15px", md: "60px 20px" }, // Adjust padding for mobile
         textAlign: "center",
         display: "flex",
         flexDirection: "column",
@@ -72,7 +72,8 @@ const Accomplishments = () => {
           color: "#FFFFFF",
           fontWeight: "bold",
           textAlign: "top",
-          marginBottom: "100px"
+          marginBottom: { xs: "50px", md: "100px" }, // Adjust margin for mobile
+          fontSize: { xs: "1.8rem", md: "2.5rem" }, // Responsive font size for heading
         }}
       >
         Accomplishments
@@ -102,6 +103,7 @@ const Accomplishments = () => {
                     fontWeight: "bold",
                     marginBottom: "10px",
                     textAlign: "center",
+                    fontSize: { xs: "2rem", md: "3rem" }, // Responsive number size
                   }}
                 >
                   {count}+
@@ -109,7 +111,7 @@ const Accomplishments = () => {
                 <Typography
                   sx={{
                     color: "#FFFFFF",
-                    fontSize: "1rem",
+                    fontSize: { xs: "0.9rem", md: "1rem" }, // Smaller font size for mobile
                     textAlign: "center",
                   }}
                 >

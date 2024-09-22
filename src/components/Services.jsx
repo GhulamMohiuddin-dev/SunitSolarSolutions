@@ -28,21 +28,21 @@ const services = [
     title: "Industrial Solar Solutions",
     description: "Tailored solar solutions designed for industrial applications to maximize energy efficiency.",
     icon: <Business sx={{ color: "#fcb916", fontSize: "2rem" }} />,
-    image: solarSolutionsImg, // Update with relevant industrial image
+    image: solarSolutionsImg,
     alt: "Industrial Solar Solutions",
   },
   {
     title: "Commercial Solar Solutions",
     description: "Comprehensive solar options for businesses to reduce energy costs and carbon footprint.",
     icon: <WbSunny sx={{ color: "#fcb916", fontSize: "2rem" }} />,
-    image: solarFinancingImg, // Update with relevant commercial image
+    image: solarFinancingImg,
     alt: "Commercial Solar Solutions",
   },
   {
     title: "Residential Solar Solutions",
     description: "Affordable solar systems for homes to enhance sustainability and save on electricity bills.",
     icon: <Home sx={{ color: "#fcb916", fontSize: "2rem" }} />,
-    image: agricultureImg, // Update with relevant residential image
+    image: agricultureImg,
     alt: "Residential Solar Solutions",
   },
   {
@@ -58,12 +58,12 @@ const Services = () => {
   return (
     <Box
       sx={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${bgImage}')`, // Image with opacity
-        backgroundSize: "cover", // Make sure the image covers the whole area
-        backgroundPosition: "center", // Center the image
-        backgroundRepeat: "no-repeat", // Prevent repetition
-        minHeight: "90vh", // Full-screen height
-        backgroundAttachment: "fixed", // Fixed background
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${bgImage}')`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        minHeight: "90vh",
+        backgroundAttachment: "fixed",
         padding: "80px 20px",
         textAlign: "center",
       }}
@@ -76,16 +76,15 @@ const Services = () => {
         What We Do
       </Typography>
       <Typography
-        sx={{ marginBottom: "50px", color: "#FFFFFF", fontSize: "1.1rem" }}
+        sx={{ marginBottom: "50px", color: "#FFFFFF", fontSize: { xs: "1rem", md: "1.1rem" } }} // Responsive font size
       >
-        At Sunit Solar solutions our team of experts is specialized in providing
-        customized and affordable solar solutions that can help in reducing the
-        cost of electricity.
+        At Sunit Solar Solutions, our team of experts specializes in providing
+        customized and affordable solar solutions that can help reduce the
+        cost of electricity.
       </Typography>
 
       {/* Services Grid */}
       <Grid container spacing={4} justifyContent="center">
-        {/* Mapping through services array */}
         {services.map((service, index) => (
           <Grid item xs={12} sm={6} md={3} key={index}>
             <Card
@@ -95,7 +94,7 @@ const Services = () => {
                 "&:hover": {
                   transform: "translateY(-10px)",
                   boxShadow:
-                    "0 10px 20px rgba(255, 255, 255, 0.5), 0 10px 20px rgba(0, 0, 0, 0.1)", // Add white shadow
+                    "0 10px 20px rgba(255, 255, 255, 0.5), 0 10px 20px rgba(0, 0, 0, 0.1)",
                 },
                 boxShadow:
                   "0 4px 12px rgba(255, 255, 255, 0.4), 0 4px 12px rgba(0, 0, 0, 0.05)",

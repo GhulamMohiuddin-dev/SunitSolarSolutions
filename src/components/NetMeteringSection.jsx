@@ -73,12 +73,12 @@ const NetMeteringSection = () => {
           they need, and send surplus power back to the national grid. This
           allows you to offset the energy consumed from the grid during
           non-productive hours, leading to reduced electricity bills or even
-          income from the excess energy generated.
-          Introduced by NEPRA in 2015, these regulations empower Pakistani
-          consumers to export unused energy back to the national grid.
-          Businesses and homeowners with a three-phase connection can take
-          advantage of net metering, starting from a 3kW system up to 1MW,
-          offering a great opportunity for savings and a sustainable future.
+          income from the excess energy generated. Introduced by NEPRA in 2015,
+          these regulations empower Pakistani consumers to export unused energy
+          back to the national grid. Businesses and homeowners with a
+          three-phase connection can take advantage of net metering, starting
+          from a 3kW system up to 1MW, offering a great opportunity for
+          savings and a sustainable future.
         </Description>
 
         <Title variant="h4">Net Metering with Sunit Solar Solutions</Title>
@@ -89,12 +89,11 @@ const NetMeteringSection = () => {
           system, then assist in submitting the application to your local power
           company. Once the inspection is complete, the electricity provider
           issues the necessary NOC, and after a final agreement and license,
-          your system is fully operational.
-          Sunit Solar Solutions is proud to be licensed by the Alternative
-          Energy Development Board (AEDB) under the ARE-VI category, ensuring
-          that we adhere to the highest standards in solar energy
-          implementation. This makes your journey toward clean energy efficient,
-          reliable, and entirely hassle-free.
+          your system is fully operational. Sunit Solar Solutions is proud to
+          be licensed by the Alternative Energy Development Board (AEDB) under
+          the ARE-VI category, ensuring that we adhere to the highest standards
+          in solar energy implementation. This makes your journey toward clean
+          energy efficient, reliable, and entirely hassle-free.
         </Description>
 
         <BoldText variant="h4">Steps to Unlock Net Metering Benefits:</BoldText>

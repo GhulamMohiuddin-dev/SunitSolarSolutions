@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Typography, Link, IconButton, Grid, Button } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
-import { WhatsApp, Instagram, Facebook, Twitter,Phone, Email } from "@mui/icons-material";
+import { WhatsApp, Instagram, Facebook, Twitter, Phone, Email } from "@mui/icons-material";
 
 const Footer = () => {
   return (
@@ -10,7 +10,7 @@ const Footer = () => {
       sx={{
         backgroundColor: "#666",
         color: "white",
-        padding: "40px 20px",
+        padding: { xs: "20px 10px", md: "40px 20px" }, // Responsive padding
         borderTop: "5px solid #fcb916",
       }}
     >
@@ -53,12 +53,11 @@ const Footer = () => {
               Contact Us
             </Link>
           </Box>
-
         </Grid>
 
         {/* Social Media Icons */}
         <Grid item xs={12} sm={12} md={4} sx={{ textAlign: "center" }}>
-            <Box display="flex" flexDirection="row" alignItems="center" gap="50px">
+          <Box display="flex" flexDirection="column" alignItems="center">
             <Button
               variant="contained"
               component={RouterLink}
@@ -66,62 +65,57 @@ const Footer = () => {
               sx={{
                 backgroundColor: "#fcb916",
                 color: "black",
-                fontSize: "14px",
+                fontSize: { xs: "12px", md: "14px" }, // Responsive font size
                 fontWeight: "bold",
                 transition: "transform 0.2s ease",
                 "&:hover": { transform: "scale(1.05)" },
-                ["@media (max-width:600px)"]: { fontSize: "12px" },
               }}
             >
               Get a Quote
             </Button>
-          <Box display="flex" flexDirection="column" alignItems="center">
-          <Typography variant="h6" sx={{ fontWeight: "bold", mb: 2 }}>
-            Follow Us
-          </Typography>
-          <Box sx={{ display: "flex", justifyContent: "center", gap: "15px" }}>
-            <IconButton
-              color="inherit"
-              component="a"
-              href="https://wa.me/yourwhatsapplink"
-              target="_blank"
-              sx={{ color: "white", "&:hover": { color: "#fcb916" } }}
-            >
-              <WhatsApp />
-            </IconButton>
-            <IconButton
-              color="inherit"
-              component="a"
-              href="https://instagram.com"
-              target="_blank"
-              sx={{ color: "white", "&:hover": { color: "#fcb916" } }}
-            >
-              <Instagram />
-            </IconButton>
-            <IconButton
-              color="inherit"
-              component="a"
-              href="https://facebook.com"
-              target="_blank"
-              sx={{ color: "white", "&:hover": { color: "#fcb916" } }}
-            >
-              <Facebook />
-            </IconButton>
-            <IconButton
-              color="inherit"
-              component="a"
-              href="https://twitter.com"
-              target="_blank"
-              sx={{ color: "white", "&:hover": { color: "#fcb916" } }}
-            >
-              <Twitter />
-            </IconButton>
-          </Box>
-          </Box>
 
+            <Typography variant="h6" sx={{ fontWeight: "bold", mb: 2, mt: 2 }}>
+              Follow Us
+            </Typography>
+            <Box sx={{ display: "flex", justifyContent: "center", gap: "15px", flexWrap: "wrap" }}>
+              <IconButton
+                color="inherit"
+                component="a"
+                href="https://wa.me/yourwhatsapplink"
+                target="_blank"
+                sx={{ color: "white", "&:hover": { color: "#fcb916" } }}
+              >
+                <WhatsApp />
+              </IconButton>
+              <IconButton
+                color="inherit"
+                component="a"
+                href="https://instagram.com"
+                target="_blank"
+                sx={{ color: "white", "&:hover": { color: "#fcb916" } }}
+              >
+                <Instagram />
+              </IconButton>
+              <IconButton
+                color="inherit"
+                component="a"
+                href="https://facebook.com"
+                target="_blank"
+                sx={{ color: "white", "&:hover": { color: "#fcb916" } }}
+              >
+                <Facebook />
+              </IconButton>
+              <IconButton
+                color="inherit"
+                component="a"
+                href="https://twitter.com"
+                target="_blank"
+                sx={{ color: "white", "&:hover": { color: "#fcb916" } }}
+              >
+                <Twitter />
+              </IconButton>
             </Box>
-            
-          
+          </Box>
         </Grid>
       </Grid>
 

@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Button, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import video from "../../public/assets/Solar_Panels.webm";
-import heroBanner from "../../public/assets/heroBanner.webp"
+import heroBanner from "../../public/assets/heroBanner.webp";
 
 const heroData = {
   title: "Sunit Solars – Conserve Energy to Preserve Future",
@@ -16,16 +16,14 @@ const HeroSection = ({ data }) => {
     <Box
       sx={{
         position: "relative",
-        height: "90vh", // Full-screen height
-        width: "100%", // Full-screen width
-        // padding: 0,
-        marginTop: "-25px",
+        height: "100vh", // Full viewport height
+        width: "100%",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
         color: "white",
         textAlign: "center",
-        overflow: "hidden", // Ensures no scrollbars appear
+        overflow: "hidden", // Ensure no scrollbars appear
         zIndex: 1,
       }}
     >
@@ -36,19 +34,14 @@ const HeroSection = ({ data }) => {
         muted
         playsInline
         poster={heroBanner}
-        preload="auto" // Preload the video for faster start
-        onTimeUpdate={(e) => {
-          if (e.target.currentTime >= 60) {
-            e.target.currentTime = 0; // Reset to the beginning
-          }
-        }}
+        preload="auto"
         style={{
           position: "absolute",
           top: 0,
           left: 0,
           width: "100%",
-          height: "100%",
-          objectFit: "cover", // Ensures the video covers the entire area
+          height: "100%", // Ensure full height
+          objectFit: "cover", // Covers the entire area
           zIndex: 0,
         }}
       >
@@ -75,9 +68,7 @@ const HeroSection = ({ data }) => {
           zIndex: 2,
           maxWidth: "800px",
           padding: "0 20px",
-          ["@media (max-width:600px)"]: {
-            maxWidth: "90%", // Responsive width for mobile screens
-          },
+          textAlign: "center",
         }}
       >
         <Typography
@@ -86,10 +77,7 @@ const HeroSection = ({ data }) => {
             fontFamily: "Poppins",
             marginBottom: "20px",
             fontWeight: "bold",
-            fontSize: "2.5rem", // Adjusted size for desktop
-            ["@media (max-width:600px)"]: {
-              fontSize: "1.5rem", // Adjusted size for mobile
-            },
+            fontSize: { xs: "1.8rem", md: "2.5rem" }, // Responsive font size
           }}
         >
           {data?.title}
@@ -97,12 +85,9 @@ const HeroSection = ({ data }) => {
         <Typography
           variant="body1"
           sx={{
-            fontSize: "18px",
+            fontSize: { xs: "14px", md: "18px" }, // Responsive font size
             lineHeight: "1.5",
             marginBottom: "30px",
-            ["@media (max-width:600px)"]: {
-              fontSize: "14px", // Smaller text for mobile
-            },
           }}
         >
           {data?.description}
@@ -115,16 +100,12 @@ const HeroSection = ({ data }) => {
             sx={{
               backgroundColor: "#fcb916",
               color: "black",
-              padding: "10px 20px",
-              fontSize: "16px",
+              padding: { xs: "8px 15px", md: "10px 20px" }, // Responsive padding
+              fontSize: { xs: "14px", md: "16px" }, // Responsive font size
               fontWeight: "bold",
               transition: "transform 0.2s ease",
               "&:hover": {
                 transform: "scale(1.05)",
-              },
-              ["@media (max-width:600px)"]: {
-                padding: "8px 15px", // Adjust padding for mobile
-                fontSize: "14px", // Smaller button text for mobile
               },
             }}
           >
