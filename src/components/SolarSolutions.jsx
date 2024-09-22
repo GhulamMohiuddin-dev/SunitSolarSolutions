@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Typography, Button, Container } from "@mui/material";
 import { styled } from "@mui/system";
 import { Link } from "react-router-dom";
-import industrial from "../assets/industrial.jpg";
+import industrial from "../assets/Industrial.jpg";
 import commercial from "../assets/commercial.jpg";
 import residential from "../assets/solar3.jpg"; // lowercase 'r' for consistency
 import useScrollToHash from "../hooks/useScrollToHash";
