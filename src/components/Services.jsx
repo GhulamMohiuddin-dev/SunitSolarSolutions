@@ -16,11 +16,11 @@ import {
   Business,
   Home,
 } from "@mui/icons-material";
-import solarSolutionsImg from "../assets/residential.webp";
-import netMeteringImg from "../assets/solar1.webp";
-import solarFinancingImg from "../assets/solar2.webp";
-import agricultureImg from "../assets/solar4.webp";
-import bgImage from "../assets/heroBanner.webp";
+import solarSolutionsImg from "../../public/assets/residential.webp";
+import netMeteringImg from "../../public/assets/solar1.webp";
+import solarFinancingImg from "../../public/assets/solar2.webp";
+import agricultureImg from "../../public/assets/solar4.webp";
+import bgImage from "../../public/assets/heroBanner.webp";
 
 // Array of services data
 const services = [

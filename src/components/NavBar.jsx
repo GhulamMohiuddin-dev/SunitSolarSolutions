@@ -28,7 +28,7 @@ import {
   ExpandLess,
   ExpandMore,
 } from "@mui/icons-material";
-import logo from "../assets/SunitSolarLogo-02.png";
+import logo from "../../public/assets/SunitSolarLogo-02.png";
 import { Link } from "react-router-dom";
 
 const NavBar = () => {

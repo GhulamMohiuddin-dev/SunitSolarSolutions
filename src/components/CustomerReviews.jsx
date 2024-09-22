@@ -11,7 +11,7 @@ import { Star, ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import heroBanner from "../assets/heroBanner.webp";
+import heroBanner from "../../public/assets/heroBanner.webp";
 
 const reviews = [
   {

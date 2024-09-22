@@ -7,7 +7,7 @@ import {
   CardContent,
   Button,
 } from "@mui/material";
-import bgImage from "../assets/heroBanner.webp"; // Assuming you have a background image similar to the one used
+import bgImage from "../../public/assets/heroBanner.webp"; // Assuming you have a background image similar to the one used
 import { Link } from "react-router-dom";
 
 // Array of packages data

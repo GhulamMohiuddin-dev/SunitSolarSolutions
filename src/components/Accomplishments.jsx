@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Box, Grid, Typography, IconButton } from "@mui/material";
 import { WbSunny, Build, Nature, EmojiNature } from "@mui/icons-material";
-import heroBanner from "../assets/heroBanner.webp"
+import heroBanner from "../../public/assets/heroBanner.webp"
 
 // Array of accomplishments data
 const accomplishments = [

@@ -2,9 +2,9 @@ import React from "react";
 import { Box, Typography, Button, Container } from "@mui/material";
 import { styled } from "@mui/system";
 import { Link } from "react-router-dom";
-import industrial from "../assets/Industrial.webp";
-import commercial from "../assets/commercial.webp";
-import residential from "../assets/solar3.webp"; // lowercase 'r' for consistency
+import industrial from "../../public/assets/Industrial.webp";
+import commercial from "../../public/assets/commercial.webp";
+import residential from "../../public/assets/solar3.webp"; // lowercase 'r' for consistency
 import useScrollToHash from "../hooks/useScrollToHash";
 
 const SectionContainer = styled(Container)(({ theme }) => ({

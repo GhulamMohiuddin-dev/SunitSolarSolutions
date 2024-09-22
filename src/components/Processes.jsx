@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Typography, Icon } from "@mui/material";
 import { ArrowForward, ArrowBack, ArrowDownward } from "@mui/icons-material";
-import heroBanner from "../assets/heroBanner.webp"; // Ensure this import is correct
+import heroBanner from "../../public/assets/heroBanner.webp"; // Ensure this import is correct
 
 // Array of process steps
 const processSteps = [

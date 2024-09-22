@@ -1,7 +1,8 @@
 import React from "react";
 import { Box, Button, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
-import video from "../assets/Solar_Panels.webm";
+import video from "../../public/assets/Solar_Panels.webm";
+import heroBanner from "../../public/assets/heroBanner.webp"
 
 const heroData = {
   title: "Sunit Solars – Conserve Energy to Preserve Future",
@@ -15,11 +16,11 @@ const HeroSection = ({ data }) => {
     <Box
       sx={{
         position: "relative",
-        height: "100vh", // Full-screen height
+        height: "90vh", // Full-screen height
         width: "100%", // Full-screen width
         // padding: 0,
         marginTop: "-25px",
-        display: "flex",  
+        display: "flex",
         alignItems: "center",
         justifyContent: "center",
         color: "white",
@@ -34,6 +35,8 @@ const HeroSection = ({ data }) => {
         loop
         muted
         playsInline
+        poster={heroBanner}
+        preload="auto" // Preload the video for faster start
         onTimeUpdate={(e) => {
           if (e.target.currentTime >= 60) {
             e.target.currentTime = 0; // Reset to the beginning
@@ -49,7 +52,7 @@ const HeroSection = ({ data }) => {
           zIndex: 0,
         }}
       >
-        <source src={video} type="video/mp4" />
+        <source src={video} type="video/webm" />
         Your browser does not support the video tag.
       </video>
 
