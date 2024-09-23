@@ -1,39 +1,69 @@
 import React from "react";
-import { Box, Typography, Icon } from "@mui/material";
-import { ArrowForward, ArrowBack, ArrowDownward } from "@mui/icons-material";
-import heroBanner from "../../public/assets/heroBanner.webp"; // Ensure this import is correct
+import { Box, Typography, Card } from "@mui/material";
+import { styled } from "@mui/system";
+import heroBanner from "../../public/assets/heroBanner.webp";
+import { CheckCircle, Build, Assignment, MonetizationOn, Power } from "@mui/icons-material";
 
-// Array of process steps
 const processSteps = [
-  "Initial Survey and Quote",
-  "Finalization of Contract",
-  "Detail Design",
-  "Project End",
-  "Net Metering",
-  "Projects Installation and Commissioning",
+  { text: "Initial Survey and Quote", icon: <CheckCircle /> },
+  { text: "Finalization of Contract", icon: <Assignment /> },
+  { text: "Detail Design", icon: <Build /> },
+  { text: "Project End", icon: <Power /> },
+  { text: "Net Metering", icon: <MonetizationOn /> },
+  { text: "Project Installation and Commissioning", icon: <Power /> },
 ];
 
-// Animation for number
-const useNumberAnimation = (end, duration) => {
-  const [count, setCount] = React.useState(0);
+// Custom styled components for a modern and fun look
+const StepContainer = styled(Box)(({ theme }) => ({
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  gap: "40px",
+  padding: "60px 20px",
+}));
 
-  React.useEffect(() => {
-    let start = 0;
-    const increment = end / (duration / 10);
-    const timer = setInterval(() => {
-      start += increment;
-      if (start >= end) {
-        clearInterval(timer);
-        setCount(end);
-      } else {
-        setCount(Math.ceil(start));
-      }
-    }, 10);
-    return () => clearInterval(timer);
-  }, [end, duration]);
+const StepCard = styled(Card)(({ theme, index }) => ({
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "space-between",
+  padding: "20px",
+  borderRadius: "8px",
+  width: "100%",
+  maxWidth: "600px",
+  boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)",
+  backgroundColor: index % 2 === 0 ? "#ffe0b2" : "#bbdefb", // Alternate colors
+  transition: "transform 0.2s",
+  '&:hover': {
+    transform: 'scale(1.05)',
+    boxShadow: "0px 8px 16px rgba(0, 0, 0, 0.2)",
+  },
+  [theme.breakpoints.down("sm")]: {
+    flexDirection: "column", // Stack items on mobile
+    alignItems: "center",
+    textAlign: "left",
+  },
+}));
 
-  return count;
-};
+const Circle = styled(Box)(({ theme }) => ({
+  width: "50px",
+  height: "50px",
+  borderRadius: "50%",
+  backgroundColor: "#fcb916",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  color: "#ffffff",
+  fontSize: "20px",
+  fontWeight: "bold",
+  transition: "transform 0.3s",
+  '&:hover': {
+    transform: 'scale(1.2)',
+  },
+  marginBottom: "10px",
+  [theme.breakpoints.down("sm")]: {
+    marginBottom: "20px"
+  }, // Space below the circle
+}));
 
 const Processes = () => {
   return (
@@ -63,146 +93,26 @@ const Processes = () => {
         Our Process
       </Typography>
 
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-        }}
-      >
-        {/* First Line */}
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            marginBottom: "20px",
-            position: "relative",
-            gap: "20px", // Reduced gap for smaller screens
-            flexWrap: "wrap", // Allows wrapping on smaller screens
-          }}
-        >
-          {processSteps.slice(0, 3).map((step, index) => {
-            const count = useNumberAnimation(index + 1, 1000); // Number animation
-
-            return (
-              <Box
-                key={index}
+      <StepContainer>
+        {processSteps.map((step, index) => (
+          <StepCard key={index} index={index}>
+            <Circle>{index + 1}</Circle>
+            <Box sx={{ display: "flex", alignItems: "center", gap: { xs: "5px", sm: "10px" } }}>
+              {step.icon}
+              <Typography
+                variant="h6"
                 sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  margin: "0 15px",
-                  position: "relative",
+                  color: "#333",
+                  fontWeight: "bold",
+                  fontSize: { xs: "1rem", sm: "1.2rem" }, // Responsive font size
                 }}
               >
-                <Typography
-                  variant="h3"
-                  sx={{
-                    color: "#fcb916",
-                    fontWeight: "bold",
-                    marginRight: "10px",
-                    animation: "fadeIn 1s ease-in-out",
-                  }}
-                >
-                  {`0${count}.`}
-                </Typography>
-                <Typography
-                  sx={{
-                    color: "#FFFFFF",
-                    fontSize: { xs: "1rem", md: "1.4rem" }, // Responsive font size
-                    marginRight: "10px",
-                  }}
-                >
-                  {step}
-                </Typography>
-                {index < 2 && (
-                  <Icon
-                    sx={{
-                      color: "#fcb916",
-                      fontSize: "2rem",
-                      position: "absolute",
-                      right: "-30px",
-                    }}
-                  >
-                    <ArrowForward />
-                  </Icon>
-                )}
-              </Box>
-            );
-          })}
-        </Box>
-        <Icon
-          sx={{
-            color: "#fcb916",
-            fontSize: "2rem",
-            position: "relative",
-            margin: "20px 0", // Added margin for spacing
-          }}
-        >
-          <ArrowDownward />
-        </Icon>
-
-        {/* Second Line */}
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            position: "relative",
-            marginTop: "40px",
-            gap: "20px", // Reduced gap for smaller screens
-            flexWrap: "wrap", // Allows wrapping on smaller screens
-          }}
-        >
-          {processSteps.slice(3).map((step, index) => {
-            const reversedIndex = 5 - index; // Reverse the index for descending order
-            const count = useNumberAnimation(reversedIndex + 1, 1000); // Number animation
-
-            return (
-              <Box
-                key={index + 3}
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  margin: "0 15px",
-                  position: "relative",
-                }}
-              >
-                {index > 0 && (
-                  <Icon
-                    sx={{
-                      color: "#fcb916",
-                      fontSize: "2rem",
-                      position: "absolute",
-                      left: "-30px",
-                    }}
-                  >
-                    <ArrowBack />
-                  </Icon>
-                )}
-                <Typography
-                  sx={{
-                    color: "#FFFFFF",
-                    fontSize: { xs: "1rem", md: "1.4rem" }, // Responsive font size
-                    marginRight: "10px",
-                  }}
-                >
-                  {step}
-                </Typography>
-                <Typography
-                  variant="h3"
-                  sx={{
-                    color: "#fcb916",
-                    fontWeight: "bold",
-                    marginRight: "10px",
-                    animation: "fadeIn 1s ease-in-out",
-                  }}
-                >
-                  {`.0${count}`}
-                </Typography>
-              </Box>
-            );
-          })}
-        </Box>
-      </Box>
+                {step.text}
+              </Typography>
+            </Box>
+          </StepCard>
+        ))}
+      </StepContainer>
     </Box>
   );
 };
