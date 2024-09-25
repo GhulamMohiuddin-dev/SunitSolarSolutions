@@ -5,12 +5,12 @@ import heroBanner from "../../public/assets/heroBanner.webp";
 import { CheckCircle, Build, Assignment, MonetizationOn, Power } from "@mui/icons-material";
 
 const processSteps = [
-  { text: "Initial Survey and Quote", icon: <CheckCircle /> },
-  { text: "Finalization of Contract", icon: <Assignment /> },
-  { text: "Detail Design", icon: <Build /> },
-  { text: "Project End", icon: <Power /> },
+  { text: "Initial Survey and Meeting", icon: <CheckCircle /> },
+  { text: "Designing of system", icon: <Build />},
+  { text: "Quote Shared", icon: <CheckCircle /> },
+  { text: "Finalization of Contract", icon: <Assignment />  },
+  { text: "Project Installation", icon: <Power /> },
   { text: "Net Metering", icon: <MonetizationOn /> },
-  { text: "Project Installation and Commissioning", icon: <Power /> },
 ];
 
 // Custom styled components for a modern and fun look

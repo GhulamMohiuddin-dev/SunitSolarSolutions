@@ -1,7 +1,14 @@
 import React from "react";
 import { Box, Typography, Link, IconButton, Grid, Button } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
-import { WhatsApp, Instagram, Facebook, Twitter, Phone, Email } from "@mui/icons-material";
+import {
+  WhatsApp,
+  Instagram,
+  Facebook,
+  Twitter,
+  Phone,
+  Email,
+} from "@mui/icons-material";
 
 const Footer = () => {
   return (
@@ -21,12 +28,15 @@ const Footer = () => {
             Sunit Solar Solutions
           </Typography>
           <Typography sx={{ mb: 1 }}>
-            123 Solar Avenue,<br />
-            Sun City, Solar State, 12345
+            884-D Faisal Town,
+            <br />
+            Adjacent to Yasir Broast Akbar Chowk, Lahore, Pakistan
           </Typography>
-          <Box sx={{ display: "flex", alignItems: "center", gap: "10px", mb: 1 }}>
+          <Box
+            sx={{ display: "flex", alignItems: "center", gap: "10px", mb: 1 }}
+          >
             <Phone sx={{ color: "#fcb916" }} />
-            <Typography>(123) 456-7890</Typography>
+            <Typography>+92 327 0477266</Typography>
           </Box>
           <Box sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
             <Email sx={{ color: "#fcb916" }} />
@@ -40,16 +50,36 @@ const Footer = () => {
             Quick Links
           </Typography>
           <Box sx={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-            <Link href="/about-us" color="inherit" underline="hover" sx={{ "&:hover": { color: "#fcb916" } }}>
+            <Link
+              href="/about-us"
+              color="inherit"
+              underline="hover"
+              sx={{ "&:hover": { color: "#fcb916" } }}
+            >
               About Us
             </Link>
-            <Link href="/my-solutions" color="inherit" underline="hover" sx={{ "&:hover": { color: "#fcb916" } }}>
+            <Link
+              href="/my-solutions"
+              color="inherit"
+              underline="hover"
+              sx={{ "&:hover": { color: "#fcb916" } }}
+            >
               Solar Solutions
             </Link>
-            <Link href="/my-projects" color="inherit" underline="hover" sx={{ "&:hover": { color: "#fcb916" } }}>
+            <Link
+              href="/my-projects"
+              color="inherit"
+              underline="hover"
+              sx={{ "&:hover": { color: "#fcb916" } }}
+            >
               Net Metering
             </Link>
-            <Link href="/contact-us" color="inherit" underline="hover" sx={{ "&:hover": { color: "#fcb916" } }}>
+            <Link
+              href="/contact-us"
+              color="inherit"
+              underline="hover"
+              sx={{ "&:hover": { color: "#fcb916" } }}
+            >
               Contact Us
             </Link>
           </Box>
@@ -77,11 +107,18 @@ const Footer = () => {
             <Typography variant="h6" sx={{ fontWeight: "bold", mb: 2, mt: 2 }}>
               Follow Us
             </Typography>
-            <Box sx={{ display: "flex", justifyContent: "center", gap: "15px", flexWrap: "wrap" }}>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                gap: "15px",
+                flexWrap: "wrap",
+              }}
+            >
               <IconButton
                 color="inherit"
                 component="a"
-                href="https://wa.me/yourwhatsapplink"
+                href="https://wa.me/923270477266" 
                 target="_blank"
                 sx={{ color: "white", "&:hover": { color: "#fcb916" } }}
               >
@@ -90,7 +127,7 @@ const Footer = () => {
               <IconButton
                 color="inherit"
                 component="a"
-                href="https://instagram.com"
+                href="https://www.instagram.com/sunitsolarsolutions?igsh=MW1udzIxaGd0Z2Fpdg=="
                 target="_blank"
                 sx={{ color: "white", "&:hover": { color: "#fcb916" } }}
               >
@@ -99,13 +136,13 @@ const Footer = () => {
               <IconButton
                 color="inherit"
                 component="a"
-                href="https://facebook.com"
+                href="http://fb.com/sunitsolarsolutions"
                 target="_blank"
                 sx={{ color: "white", "&:hover": { color: "#fcb916" } }}
               >
                 <Facebook />
               </IconButton>
-              <IconButton
+              {/* <IconButton
                 color="inherit"
                 component="a"
                 href="https://twitter.com"
@@ -113,15 +150,23 @@ const Footer = () => {
                 sx={{ color: "white", "&:hover": { color: "#fcb916" } }}
               >
                 <Twitter />
-              </IconButton>
+              </IconButton> */}
             </Box>
           </Box>
         </Grid>
       </Grid>
 
-      <Box sx={{ textAlign: "center", marginTop: "20px", borderTop: "1px solid #444", paddingTop: "10px" }}>
+      <Box
+        sx={{
+          textAlign: "center",
+          marginTop: "20px",
+          borderTop: "1px solid #444",
+          paddingTop: "10px",
+        }}
+      >
         <Typography variant="body2" sx={{ color: "#777" }}>
-          © {new Date().getFullYear()} Sunit Solar Solutions. All rights reserved.
+          © {new Date().getFullYear()} Sunit Solar Solutions. All rights
+          reserved.
         </Typography>
       </Box>
     </Box>

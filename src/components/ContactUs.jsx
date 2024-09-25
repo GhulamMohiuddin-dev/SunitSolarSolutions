@@ -8,9 +8,24 @@ import {
   Card,
   CardContent,
 } from "@mui/material";
-import { styled } from "@mui/system";
+import { styled, keyframes } from "@mui/system";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';  // Import CSS for Toastify
+
+const pulse = keyframes`
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.1);
+  }
+`;
 
 const FormContainer = styled(Box)(({ theme, isTrue }) => ({
   padding: isTrue ? "60px 20px" : "0px", // Conditional padding based on isTrue
@@ -33,23 +48,24 @@ const StyledCard = styled(Card)(({ theme }) => ({
   },
 }));
 
-const StyledButton = styled(Button)(({ theme }) => ({
-  backgroundColor: "#fcb916",
-  color: "#fff",
-  padding: "10px 20px",
-  fontWeight: "bold",
-  fontSize: "16px",
-  marginTop: "20px",
-  transition: "background-color 0.3s, transform 0.3s",
-  "&:hover": {
-    backgroundColor: "#d1a014",
-    transform: "scale(1.05)",
-  },
-  ["@media (max-width:600px)"]: {
-    padding: "8px 15px",
-    fontSize: "14px", // Smaller font size for mobile
-  },
-}));
+const StyledButton = styled(Button)(({ theme, isAnimated }) => ({
+    backgroundColor: "#fcb916",
+    color: "#fff",
+    padding: "10px 20px",
+    fontWeight: "bold",
+    fontSize: "16px",
+    marginTop: "20px",
+    transition: "background-color 0.3s, transform 0.3s",
+    animation: isAnimated ? `${pulse} 2s infinite` : "none", // Apply pulse animation based on isAnimated
+    "&:hover": {
+      backgroundColor: "#d1a014",
+      transform: "scale(1.05)",
+    },
+    ["@media (max-width:600px)"]: {
+      padding: "8px 15px",
+      fontSize: "14px", // Smaller font size for mobile
+    },
+  }));
 
 const ContactUs = ({ isTrue }) => {
   const [formData, setFormData] = useState({
@@ -260,7 +276,7 @@ const ContactUs = ({ isTrue }) => {
                 </Grid>
               </Grid>
               <Box textAlign="center">
-                <StyledButton type="submit">Submit</StyledButton>
+                <StyledButton type="submit" isAnimated={!isTrue}>Submit</StyledButton>
               </Box>
             </form>
           </CardContent>

@@ -29,22 +29,22 @@ const SocialMediaSidebar = () => {
   return (
     <SidebarContainer>
       <Tooltip title="WhatsApp" arrow>
-        <StyledIconButton href="https://wa.me/yourwhatsappnumber" target="_blank">
+        <StyledIconButton href="https://wa.me/923270477266"  target="_blank">
           <WhatsApp />
         </StyledIconButton>
       </Tooltip>
-      <Tooltip title="Twitter" arrow>
+      {/* <Tooltip title="Twitter" arrow>
         <StyledIconButton href="https://twitter.com/yourusername" target="_blank">
           <Twitter />
         </StyledIconButton>
-      </Tooltip>
+      </Tooltip> */}
       <Tooltip title="Instagram" arrow>
-        <StyledIconButton href="https://instagram.com/yourusername" target="_blank">
+        <StyledIconButton href="https://www.instagram.com/sunitsolarsolutions?igsh=MW1udzIxaGd0Z2Fpdg==" target="_blank">
           <Instagram />
         </StyledIconButton>
       </Tooltip>
       <Tooltip title="Facebook" arrow>
-        <StyledIconButton href="https://facebook.com/yourusername" target="_blank">
+        <StyledIconButton href="http://fb.com/sunitsolarsolutions" target="_blank">
           <Facebook />
         </StyledIconButton>
       </Tooltip>

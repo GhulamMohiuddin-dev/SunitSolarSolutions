@@ -69,7 +69,7 @@ const NavBar = () => {
   };
 
   const menuButtonStyle = {
-    color: "white",
+    color: "#666",
     display: "flex",
     alignItems: "center",
     textTransform: "uppercase",
@@ -140,7 +140,7 @@ const NavBar = () => {
                 to={subItem.link}
                 sx={{ pl: 4 }}
               >
-                <ListItemText primary={subItem.label} sx={{ color: "white" }} />
+                <ListItemText primary={subItem.label} sx={{ color: "#666" }} />
               </ListItem>
             ))}
           </List>
@@ -188,7 +188,7 @@ const NavBar = () => {
         position="sticky"
         sx={{
           zIndex: 10,
-          backgroundColor: "#666",
+          backgroundColor: "#fff",
           padding: "10px 20px",
           margin: "0px",
           width: "100%",
@@ -213,7 +213,7 @@ const NavBar = () => {
             edge="start"
             color="inherit"
             aria-label="menu"
-            sx={{ display: { xs: "flex", md: "none" } }}
+            sx={{ display: { xs: "flex", md: "none" }, color: "#666" }}
             onClick={toggleDrawer(true)}
           >
             <Menu />
@@ -223,22 +223,45 @@ const NavBar = () => {
             <Box
               sx={{
                 width: 250,
-                backgroundColor: "#333",
-                color: "white",
+                backgroundColor: "#fff",
+                color: "#fff",
                 height: "100%",
+                marginTop: "20px",
               }}
               role="presentation"
               onClick={(e) => e.stopPropagation()}
               onKeyDown={toggleDrawer(false)}
             >
-              <List>{menuItems.map((item) => renderMenuItem(item, true))}</List>
+              <List sx={{ color: "#666" }}>
+                {menuItems.map((item) => renderMenuItem(item, true))}
+              </List>
               <Divider sx={{ borderColor: "#fcb916" }} />
               <Box sx={{ padding: "10px 0", textAlign: "center" }}>
-                <IconButton color="inherit">
-                  <LinkedIn sx={{ color: "white" }} />
+                <IconButton
+                  color="inherit"
+                  component="a"
+                  href="https://wa.me/923270477266"
+                  target="_blank"
+                >
+                  <WhatsApp sx={{ color: "#666" }} />
                 </IconButton>
-                <IconButton color="inherit">
-                  <Instagram sx={{ color: "white" }} />
+                <IconButton
+                  color="inherit"
+                  component="a"
+                  href="https://www.instagram.com/sunitsolarsolutions?igsh=MW1udzIxaGd0Z2Fpdg=="
+                  target="_blank"
+                >
+                  <Instagram sx={{ color: "#666" }} />
+                </IconButton>
+
+                {/* Facebook */}
+                <IconButton
+                  color="inherit"
+                  component="a"
+                  href="http://fb.com/sunitsolarsolutions"
+                  target="_blank"
+                >
+                  <Facebook sx={{ color: "#666" }} />
                 </IconButton>
               </Box>
             </Box>
@@ -282,41 +305,41 @@ const NavBar = () => {
             <IconButton
               color="inherit"
               component="a"
-              href="https://wa.me/yourwhatsapplink"
+              href="https://wa.me/923270477266"
               target="_blank"
             >
-              <WhatsApp sx={{ color: "white" }} />
+              <WhatsApp sx={{ color: "#666" }} />
             </IconButton>
 
             {/* Instagram */}
             <IconButton
               color="inherit"
               component="a"
-              href="https://www.instagram.com"
+              href="https://www.instagram.com/sunitsolarsolutions?igsh=MW1udzIxaGd0Z2Fpdg=="
               target="_blank"
             >
-              <Instagram sx={{ color: "white" }} />
+              <Instagram sx={{ color: "#666" }} />
             </IconButton>
 
             {/* Facebook */}
             <IconButton
               color="inherit"
               component="a"
-              href="https://www.facebook.com"
+              href="http://fb.com/sunitsolarsolutions"
               target="_blank"
             >
-              <Facebook sx={{ color: "white" }} />
+              <Facebook sx={{ color: "#666" }} />
             </IconButton>
 
             {/* Twitter */}
-            <IconButton
+            {/* <IconButton
               color="inherit"
               component="a"
               href="https://www.twitter.com"
               target="_blank"
             >
-              <Twitter sx={{ color: "white" }} />
-            </IconButton>
+              <Twitter sx={{ color: "#666" }} />
+            </IconButton> */}
           </Box>
         </Toolbar>
       </AppBar>
