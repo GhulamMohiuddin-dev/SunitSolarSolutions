@@ -140,7 +140,10 @@ const NavBar = () => {
                 to={subItem.link}
                 sx={{ pl: 4 }}
               >
-                <ListItemText primary={subItem.label} sx={{ color: "#666" }} />
+                <ListItemText
+                  primary={subItem.label}
+                  sx={{ color: "#666", fontWeight: "900px" }}
+                />
               </ListItem>
             ))}
           </List>
@@ -284,6 +287,23 @@ const NavBar = () => {
               gap: "10px",
             }}
           >
+            <Typography
+              component="a"
+              href="tel:+923270477266"
+              sx={{
+                color: "#666",
+                fontWeight: "bold",
+                fontSize: "16px",
+                marginRight: "20px",
+                textDecoration: "none",
+                transition: "transform 0.2s ease",
+                "&:hover": { transform: "scale(1.05)" },
+                ["@media (max-width:600px)"]: { fontSize: "12px" },
+              }}
+            >
+              <Phone sx={{ verticalAlign: "middle", marginRight: "5px" }} />
+              +92 327 0477266
+            </Typography>
             <Button
               variant="contained"
               component={Link}

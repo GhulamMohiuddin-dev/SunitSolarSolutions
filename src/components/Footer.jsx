@@ -25,13 +25,20 @@ const Footer = () => {
         {/* Company Information */}
         <Grid item xs={12} sm={6} md={4}>
           <Typography variant="h6" sx={{ fontWeight: "bold", mb: 2 }}>
-            Sunit Solar Solutions
+            SUNit Solar Solutions
           </Typography>
-          <Typography sx={{ mb: 1 }}>
-            884-D Faisal Town,
-            <br />
-            Adjacent to Yasir Broast Akbar Chowk, Lahore, Pakistan
-          </Typography>
+          <Link
+            href="https://maps.app.goo.gl/c8b1MxyCBiP6vujA7"
+            target="_blank"
+            rel="noopener noreferrer"
+            sx={{ color: "white", textDecoration: "none", "&:hover": { color: "#fcb916" } }}
+          >
+            <Typography sx={{ mb: 1 }}>
+              884-D Faisal Town,
+              <br />
+              Adjacent to Yasir Broast Akbar Chowk, Lahore, Pakistan
+            </Typography>
+          </Link>
           <Box
             sx={{ display: "flex", alignItems: "center", gap: "10px", mb: 1 }}
           >

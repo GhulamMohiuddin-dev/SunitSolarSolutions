@@ -58,7 +58,7 @@ const StyledButton = styled(Button)(({ theme }) => ({
 const heroData = {
   title: "Net Metering",
   description:
-    "Sell your excess solar energy to the national grid and save up to 100% on your electricity bills with Sunit Solar Solutions.",
+    "Sell your excess solar energy to the national grid and save up to 100% on your electricity bills with SUNit Solar Solutions.",
 };
 
 const NetMeteringSection = () => {
@@ -81,7 +81,7 @@ const NetMeteringSection = () => {
           savings and a sustainable future.
         </Description>
 
-        <Title variant="h4">Net Metering with Sunit Solar Solutions</Title>
+        <Title variant="h4">Net Metering with SUNit Solar Solutions</Title>
         <Description>
           At Sunit Solar Solutions, we simplify the net metering process,
           guiding you from installation to the final activation of your solar

@@ -5,9 +5,9 @@ import video from "../../public/assets/Solar_Panels.webm";
 import heroBanner from "../../public/assets/heroBanner.webp";
 
 const heroData = {
-  title: "Sunit Solars – Conserve Energy to Preserve Future",
+  title: "SUNit: Energizing Tomorrow with Solar Power",
   description:
-    "Sunit Solar is committed to delivering a comfortable and eco-friendly lifestyle to society by providing energy solutions for an ideal today and a healthy tomorrow.",
+    "",
   isButton: true,
 };
 

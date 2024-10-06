@@ -16,6 +16,7 @@ import ContactPage from "./components/ContactPage";
 import ContactModal from "./components/ContactModal";
 import SolarSolutions from "./components/SolarSolutions";
 import NetMeteringSection from "./components/NetMeteringSection";
+import CompanyLogos from "./components/CompanyLogos";
 
 // Define the custom theme
 const theme = createTheme({
@@ -55,9 +56,9 @@ const theme = createTheme({
 });
 
 const heroData = {
-  title: "Sunit Solars – Conserve Energy to Preserve Future",
+  title: "SUNit: Energizing Tomorrow with Solar Power",
   description:
-    "Sunit Solar is committed to delivering a comfortable and eco-friendly lifestyle to society by providing energy solutions for an ideal today and a healthy tomorrow.",
+    "",
   isButton: true,
 };
 
@@ -91,6 +92,7 @@ const HomePage = () => (
     <HeroSection data={heroData} />
     <Services />
     {/* <SolarPackages /> */}
+    <CompanyLogos/>
     <Accomplishments />
     <Processes />
     <CustomerReviews />

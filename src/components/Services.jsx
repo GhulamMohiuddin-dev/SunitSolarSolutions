@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Box,
   Grid,
@@ -16,34 +17,43 @@ import {
   Business,
   Home,
 } from "@mui/icons-material";
-import solarSolutionsImg from "../../public/assets/residential.webp";
 import netMeteringImg from "../../public/assets/solar1.webp";
-import solarFinancingImg from "../../public/assets/solar2.webp";
-import agricultureImg from "../../public/assets/solar4.webp";
 import bgImage from "../../public/assets/heroBanner.webp";
+import solarSolutionsImg from "../../public/assets/ind-11.jpg";
+import solarFinancingImg from "../../public/assets/com-4.JPG";
+import resImg from "../../public/assets/res-1.jpg";
+
+
+
 
 // Array of services data
 const services = [
   {
     title: "Industrial Solar Solutions",
-    description: "Tailored solar solutions designed for industrial applications to maximize energy efficiency.",
+    description:
+      "Tailored solar solutions designed for industrial applications to maximize energy efficiency.",
     icon: <Business sx={{ color: "#fcb916", fontSize: "2rem" }} />,
     image: solarSolutionsImg,
     alt: "Industrial Solar Solutions",
+    link: "/my-solutions#industrial",
   },
   {
     title: "Commercial Solar Solutions",
-    description: "Comprehensive solar options for businesses to reduce energy costs and carbon footprint.",
+    description:
+      "Comprehensive solar options for businesses to reduce energy costs and carbon footprint.",
     icon: <WbSunny sx={{ color: "#fcb916", fontSize: "2rem" }} />,
     image: solarFinancingImg,
     alt: "Commercial Solar Solutions",
+    link: "/my-solutions#commercial",
   },
   {
     title: "Residential Solar Solutions",
-    description: "Affordable solar systems for homes to enhance sustainability and save on electricity bills.",
+    description:
+      "Affordable solar systems for homes to enhance sustainability and save on electricity bills.",
     icon: <Home sx={{ color: "#fcb916", fontSize: "2rem" }} />,
-    image: agricultureImg,
+    image: resImg,
     alt: "Residential Solar Solutions",
+    link: "/my-solutions#residential",
   },
   {
     title: "Net Metering",
@@ -51,10 +61,16 @@ const services = [
     icon: <EvStation sx={{ color: "#fcb916", fontSize: "2rem" }} />,
     image: netMeteringImg,
     alt: "Net Metering",
+    link: "/my-projects",
   },
 ];
 
 const Services = () => {
+  const navigate = useNavigate();
+
+  const handleCardClick = (link) => {
+    navigate(link);
+  };
   return (
     <Box
       sx={{
@@ -76,11 +92,14 @@ const Services = () => {
         What We Do
       </Typography>
       <Typography
-        sx={{ marginBottom: "50px", color: "#FFFFFF", fontSize: { xs: "1rem", md: "1.1rem" } }} // Responsive font size
+        sx={{
+          marginBottom: "50px",
+          color: "#FFFFFF",
+          fontSize: { xs: "1rem", md: "1.1rem" },
+        }} // Responsive font size
       >
-        At Sunit Solar Solutions, our team of experts specializes in providing
-        customized and affordable solar solutions that can help reduce the
-        cost of electricity.
+        At SUNit our team of experts is specialized to provide customised and
+        affordable solar solutions that can help reduce the cost of electricity.
       </Typography>
 
       {/* Services Grid */}
@@ -89,6 +108,7 @@ const Services = () => {
           <Grid item xs={12} sm={6} md={3} key={index}>
             <Card
               sx={{
+                cursor: "pointer",
                 borderRadius: "20px",
                 transition: "transform 0.3s ease, box-shadow 0.3s ease",
                 "&:hover": {
@@ -100,6 +120,7 @@ const Services = () => {
                   "0 4px 12px rgba(255, 255, 255, 0.4), 0 4px 12px rgba(0, 0, 0, 0.05)",
                 backgroundColor: "white",
               }}
+              onClick={() => handleCardClick(service.link)}
             >
               <CardMedia
                 component="img"

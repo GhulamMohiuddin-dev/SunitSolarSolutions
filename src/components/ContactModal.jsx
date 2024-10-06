@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Box, Modal, Card, CardContent, Button } from "@mui/material";
+import { Box, Modal, Card, CardContent, Button, IconButton } from "@mui/material";
 import { styled, keyframes } from "@mui/system";
+import CloseIcon from '@mui/icons-material/Close'
 import ContactUs from "./ContactUs";
 
 // Fade in animation
@@ -104,6 +105,17 @@ const ContactModal = () => {
   return (
     <StyledModal open={open} onClose={handleClose}>
       <ModalContent>
+      <IconButton
+        aria-label="close"
+        onClick={handleClose}
+        style={{
+          position: 'absolute',
+          top: 20,
+          right: 20,
+        }}
+      >
+        <CloseIcon />
+      </IconButton>
         <CardContent>
           <ContactUs isTrue={false} />
         </CardContent>

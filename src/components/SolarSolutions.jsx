@@ -2,10 +2,32 @@ import React from "react";
 import { Box, Typography, Button, Container } from "@mui/material";
 import { styled } from "@mui/system";
 import { Link } from "react-router-dom";
-import industrial from "../../public/assets/Industrial.webp";
+import com1 from "../../public/assets/com-1.JPG";
+import com2 from "../../public/assets/com-2.JPG";
+import com3 from "../../public/assets/com-3.JPG";
+import com4 from "../../public/assets/com-4.JPG";
+import res1 from "../../public/assets/res-1.jpg";
+import res2 from "../../public/assets/res-2.jpg";
+import res3 from "../../public/assets/res-3.jpg";
+import res4 from "../../public/assets/res-4.jpg";
+import ind4 from "../../public/assets/ind-4.jpg";
+import ind6 from "../../public/assets/ind-6.jpg";
+import ind8 from "../../public/assets/ind-8.jpg";
+import ind10 from "../../public/assets/ind-10.jpg";
+import ind11 from "../../public/assets/ind-11.jpg";
+
+
+
+
+
+
+
+
+
+
 import commercial from "../../public/assets/commercial.webp";
-import residential from "../../public/assets/solar3.webp"; // lowercase 'r' for consistency
 import useScrollToHash from "../hooks/useScrollToHash";
+import Slider from "react-slick";
 
 const SectionContainer = styled(Container)(({ theme }) => ({
   padding: "60px 20px",
@@ -42,10 +64,10 @@ const Description = styled(Typography)(({ theme }) => ({
 }));
 
 const ImageContainer = styled(Box)(({ theme }) => ({
-  width: "100%",
-  height: "500px",
   backgroundSize: "cover",
+  // overflow: "hidden",
   backgroundPosition: "center",
+  backgroundRepeat: "no-repeat",
   marginBottom: "30px",
   borderRadius: "8px",
 }));
@@ -68,6 +90,17 @@ const StyledButton = styled(Button)(({ theme }) => ({
   },
 }));
 
+const carouselSettings = {
+  dots: true,
+  arrows: false,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 3000,
+};
+
 const SolarSolutions = () => {
   useScrollToHash();
   return (
@@ -78,7 +111,15 @@ const SolarSolutions = () => {
       <Title variant="h5" id="industrial">
         Industrial Solutions
       </Title>
-      <ImageContainer style={{ backgroundImage: `url(${industrial})` }} />
+      <ImageContainer>
+        <Slider {...carouselSettings}>
+          <Box component="img" src={ind10} alt="Industrial Solution 1"  />
+          <Box component="img" src={ind11} alt="Industrial Solution 2"  />
+          <Box component="img" src={ind4} alt="Industrial Solution 3"  />
+          <Box component="img" src={ind8} alt="Industrial Solution 3"  />
+          <Box component="img" src={ind6} alt="Industrial Solution 3"  />
+        </Slider>
+      </ImageContainer>
       <Description>
         With the ongoing surge in electricity prices, Pakistan’s medium and
         large-scale industries are finding it harder to stay competitive in
@@ -100,7 +141,14 @@ const SolarSolutions = () => {
       <Title variant="h5" id="commercial">
         Commercial Solutions
       </Title>
-      <ImageContainer style={{ backgroundImage: `url(${commercial})` }} />
+      <ImageContainer>
+        <Slider {...carouselSettings}>
+          <Box component="img" src={com1} alt="Industrial Solution 1"  />
+          <Box component="img" src={com2} alt="Industrial Solution 2"  />
+          <Box component="img" src={com3} alt="Industrial Solution 3"  />
+          <Box component="img" src={com4} alt="Industrial Solution 3"  />
+        </Slider>
+      </ImageContainer>
       <Description>
         Businesses that operate during peak daylight hours are ideally suited
         for solar energy. With electricity prices rising dramatically due to
@@ -119,7 +167,14 @@ const SolarSolutions = () => {
       <Title variant="h5" id="residential">
         Residential Solutions
       </Title>
-      <ImageContainer style={{ backgroundImage: `url(${residential})` }} />
+      <ImageContainer>
+        <Slider {...carouselSettings}>
+          <Box component="img" src={res1} alt="Industrial Solution 1" />
+          <Box component="img" src={res2} alt="Industrial Solution 2" />
+          <Box component="img" src={res3} alt="Industrial Solution 2" />
+          <Box component="img" src={res4} alt="Industrial Solution 2" />
+        </Slider>
+      </ImageContainer>
       <Description>
         At Sunit Solar Solutions, we partner with world-class technology
         providers to offer the most advanced solar solutions for homes. Our
