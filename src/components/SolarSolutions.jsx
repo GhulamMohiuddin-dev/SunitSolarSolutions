@@ -2,19 +2,19 @@ import React from "react";
 import { Box, Typography, Button, Container } from "@mui/material";
 import { styled } from "@mui/system";
 import { Link } from "react-router-dom";
-import com1 from "../../public/assets/com-1.JPG";
-import com2 from "../../public/assets/com-2.JPG";
-import com3 from "../../public/assets/com-3.JPG";
-import com4 from "../../public/assets/com-4.JPG";
-import res1 from "../../public/assets/res-1.jpg";
-import res2 from "../../public/assets/res-2.jpg";
-import res3 from "../../public/assets/res-3.jpg";
-import res4 from "../../public/assets/res-4.jpg";
-import ind4 from "../../public/assets/ind-4.JPG";
-import ind6 from "../../public/assets/ind-6.JPG";
-import ind8 from "../../public/assets/ind-8.JPG";
-import ind10 from "../../public/assets/ind-10.jpg";
-import ind11 from "../../public/assets/ind-11.jpg";
+import com1 from "../../public/assets/com-1.webp";
+import com2 from "../../public/assets/com-2.webp";
+import com3 from "../../public/assets/com-3.webp";
+import com4 from "../../public/assets/com-4.webp";
+import res1 from "../../public/assets/res-1.webp";
+import res2 from "../../public/assets/res-2.webp";
+import res3 from "../../public/assets/res-3.webp";
+import res4 from "../../public/assets/res-4.webp";
+import ind4 from "../../public/assets/ind-4.webp";
+import ind6 from "../../public/assets/ind-6.webp";
+import ind8 from "../../public/assets/ind-8.webp";
+import ind10 from "../../public/assets/ind-10.webp";
+import ind11 from "../../public/assets/ind-11.webp";
 
 
 

@@ -17,14 +17,11 @@ import {
   Business,
   Home,
 } from "@mui/icons-material";
+import solarSolutionsImg from "../../public/assets/residential.webp";
 import netMeteringImg from "../../public/assets/solar1.webp";
+import solarFinancingImg from "../../public/assets/solar2.webp";
+import agricultureImg from "../../public/assets/solar4.webp";
 import bgImage from "../../public/assets/heroBanner.webp";
-import solarSolutionsImg from "../../public/assets/ind-11.jpg";
-import solarFinancingImg from "../../public/assets/com-4.JPG";
-import resImg from "../../public/assets/res-1.jpg";
-
-
-
 
 // Array of services data
 const services = [
@@ -51,7 +48,7 @@ const services = [
     description:
       "Affordable solar systems for homes to enhance sustainability and save on electricity bills.",
     icon: <Home sx={{ color: "#fcb916", fontSize: "2rem" }} />,
-    image: resImg,
+    image: agricultureImg,
     alt: "Residential Solar Solutions",
     link: "/my-solutions#residential",
   },
