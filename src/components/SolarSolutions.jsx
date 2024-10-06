@@ -10,9 +10,9 @@ import res1 from "../../public/assets/res-1.jpg";
 import res2 from "../../public/assets/res-2.jpg";
 import res3 from "../../public/assets/res-3.jpg";
 import res4 from "../../public/assets/res-4.jpg";
-import ind4 from "../../public/assets/ind-4.jpg";
-import ind6 from "../../public/assets/ind-6.jpg";
-import ind8 from "../../public/assets/ind-8.jpg";
+import ind4 from "../../public/assets/ind-4.JPG";
+import ind6 from "../../public/assets/ind-6.JPG";
+import ind8 from "../../public/assets/ind-8.JPG";
 import ind10 from "../../public/assets/ind-10.jpg";
 import ind11 from "../../public/assets/ind-11.jpg";
 
